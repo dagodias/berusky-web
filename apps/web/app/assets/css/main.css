@@ -61,3 +61,52 @@
     scroll-behavior: smooth;
   }
 }
+
+/*
+ * As cores do jogo. Os cinco besouros seguem as cores do original (vermelho, verde, azul, bege e violeta), num tom
+ * mais vivo; o número de cada um vai junto no desenho, para quem não distingue as cores. O tabuleiro tem um tema para
+ * cada fundo do original (0 e 1), um pouco mais escuro no modo escuro, para não ofuscar.
+ */
+:root {
+  /* Os besouros (variáveis comuns: o tabuleiro usa direto, sem classe do Tailwind). */
+  --besouro-1: #ef4444;
+  --besouro-2: #22c55e;
+  --besouro-3: #3b82f6;
+  --besouro-4: #e8b16a;
+  --besouro-5: #a855f7;
+  /* Fundo 0: o jardim. */
+  --jogo-0-chao: #a7c79a;
+  --jogo-0-chao-pinta: #98bb8a;
+  --jogo-0-piso-a: #eef3ea;
+  --jogo-0-piso-b: #e5ede0;
+  --jogo-0-piso-c: #dce6d5;
+  --jogo-0-parede: #5f7084;
+  --jogo-0-parede-lado: #435062;
+  /* Fundo 1: a terra. */
+  --jogo-1-chao: #dcae7c;
+  --jogo-1-chao-pinta: #d2a06c;
+  --jogo-1-piso-a: #f6ecdf;
+  --jogo-1-piso-b: #f0e3d1;
+  --jogo-1-piso-c: #e9d9c3;
+  --jogo-1-parede: #7d5c48;
+  --jogo-1-parede-lado: #5b4033;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --jogo-0-chao: #5f7f55;
+    --jogo-0-chao-pinta: #56754c;
+    --jogo-0-piso-a: #c9d3c4;
+    --jogo-0-piso-b: #bfcab9;
+    --jogo-0-piso-c: #b5c1ae;
+    --jogo-0-parede: #4a586a;
+    --jogo-0-parede-lado: #2f3946;
+    --jogo-1-chao: #a87d54;
+    --jogo-1-chao-pinta: #9c714a;
+    --jogo-1-piso-a: #d9cbb8;
+    --jogo-1-piso-b: #d0c0ab;
+    --jogo-1-piso-c: #c6b59e;
+    --jogo-1-parede: #634736;
+    --jogo-1-parede-lado: #432f24;
+  }
+}

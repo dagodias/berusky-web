@@ -1,9 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-  <!-- O ícone da aba do navegador. Troque pelo seu, com o mesmo nome (icone.svg). -->
-  <rect width="32" height="32" rx="8" fill="#047857"/>
-  <g fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="7" y="8" width="18" height="16" rx="3"/>
-    <circle cx="12.2" cy="13" r="1.5"/>
-    <path d="M8 22l5-4.4 3.2 2.7 4-4 4 3.8"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- O ícone do Berusky (versão web): a joaninha do jogo. Arte desta versão, sob a GPL. -->
+  <rect width="64" height="64" rx="14" fill="#ecfdf5"/>
+  <g transform="translate(5 6) scale(0.84)">
+    <g stroke="#1f2937" stroke-width="3" stroke-linecap="round" fill="none">
+      <path d="M14 28 8 23M13 37H6M14 46l-6 5M50 28l6-5M51 37h7M50 46l6 5M27 10q-3-5-7-6M37 10q3-5 7-6"/>
+    </g>
+    <ellipse cx="32" cy="15" rx="11" ry="9" fill="#1f2937"/>
+    <circle cx="27.5" cy="12.5" r="3.2" fill="#fff"/>
+    <circle cx="36.5" cy="12.5" r="3.2" fill="#fff"/>
+    <ellipse cx="32" cy="37" rx="20" ry="21" fill="#ef4444"/>
+    <path d="M32 17v40" stroke="#1f2937" stroke-opacity=".55" stroke-width="2"/>
+    <g fill="#1f2937" opacity=".85">
+      <circle cx="22.5" cy="30" r="4"/><circle cx="41.5" cy="30" r="4"/>
+      <circle cx="21.5" cy="45" r="3.4"/><circle cx="42.5" cy="45" r="3.4"/>
+    </g>
   </g>
 </svg>

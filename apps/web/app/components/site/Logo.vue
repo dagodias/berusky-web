@@ -8,5 +8,5 @@ defineProps<{ nome?: string }>()
 </script>
 
 <template>
-  <img src="/logo.svg" :alt="nome ?? ''" width="124" height="40" class="h-9 w-auto" />
+  <img src="/logo.svg" :alt="nome ?? ''" width="132" height="40" class="h-9 w-auto" />
 </template>

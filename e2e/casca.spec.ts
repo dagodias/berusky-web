@@ -88,6 +88,17 @@ test('o guia de estilo fica fora do Google e fora do menu', async ({ page }) => 
   )
 })
 
+test('o guia de estilo mostra as peças do jogo e duas fases de verdade', async ({ page }) => {
+  await page.goto('/guia-de-estilo')
+  await expect(page.getByRole('heading', { name: 'O jogo' })).toBeVisible()
+  const tabuleiro = page.getByRole('img', { name: 'O tabuleiro da fase 1 do grupo treino' })
+  await expect(tabuleiro).toBeVisible()
+  // O treino 1 tem um besouro e, das peças, cinco chaves e a saída.
+  await expect(tabuleiro.locator('[data-besouro]')).toHaveCount(1)
+  await expect(tabuleiro.locator('[data-peca="jogo-chave"]')).toHaveCount(5)
+  await expect(tabuleiro.locator('[data-peca="jogo-saida"]')).toHaveCount(1)
+})
+
 test('as páginas saem com os cabeçalhos de segurança', async ({ request }) => {
   const cabecalhos = (await request.get('/')).headers()
   expect(cabecalhos['x-content-type-options']).toBe('nosniff')

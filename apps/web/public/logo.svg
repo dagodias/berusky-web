@@ -1,21 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="116" height="40" viewBox="0 0 116 40" role="img" aria-label="Sua logo">
-  <!-- O lugar da sua logo. Troque este arquivo pela sua logo, com o mesmo nome (logo.svg). -->
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="40" viewBox="0 0 132 40" role="img" aria-label="Berusky">
+  <!-- A logo do Berusky (versão web): a joaninha do jogo e o nome. Arte desta versão, sob a GPL. -->
   <style>
-    .borda { fill: none; stroke: #a8a29e; stroke-width: 1.5; stroke-dasharray: 4 3; }
-    .fundo { fill: #f5f5f4; }
-    .desenho { fill: none; stroke: #57534e; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-    .texto { fill: #292524; font: 600 15px ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+    .texto { fill: #1c1917; font: 800 22px ui-rounded, 'SF Pro Rounded', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; letter-spacing: -0.4px; }
+    .escuro { fill: #1f2937; }
+    .traco { stroke: #1f2937; }
     @media (prefers-color-scheme: dark) {
-      .borda { stroke: #78716c; }
-      .fundo { fill: #292524; }
-      .desenho { stroke: #d6d3d1; }
-      .texto { fill: #f5f5f4; }
+      .texto { fill: #fafaf9; }
+      .escuro { fill: #e7e5e4; }
+      .traco { stroke: #e7e5e4; }
     }
   </style>
-  <rect class="borda" x="0.75" y="0.75" width="114.5" height="38.5" rx="10"/>
-  <rect class="fundo" x="7" y="7" width="26" height="26" rx="7"/>
-  <rect class="desenho" x="12.5" y="13" width="15" height="14" rx="2.5"/>
-  <circle class="desenho" cx="17" cy="17.4" r="1.3"/>
-  <path class="desenho" d="M13.2 25.4l4.1-3.6 2.6 2.2 3.3-3.3 3.6 3.4"/>
-  <text class="texto" x="41" y="25.3">Sua logo</text>
+  <g transform="translate(1 1.5) scale(0.58)">
+    <g class="traco" stroke-width="3" stroke-linecap="round" fill="none">
+      <path d="M14 28 8 23M13 37H6M14 46l-6 5M50 28l6-5M51 37h7M50 46l6 5M27 10q-3-5-7-6M37 10q3-5 7-6"/>
+    </g>
+    <circle class="escuro" cx="20" cy="4" r="2.5"/>
+    <circle class="escuro" cx="44" cy="4" r="2.5"/>
+    <ellipse class="escuro" cx="32" cy="15" rx="11" ry="9"/>
+    <circle cx="27.5" cy="12.5" r="3.2" fill="#fff"/>
+    <circle cx="36.5" cy="12.5" r="3.2" fill="#fff"/>
+    <circle cx="27.5" cy="11.8" r="1.6" fill="#111827"/>
+    <circle cx="36.5" cy="11.8" r="1.6" fill="#111827"/>
+    <ellipse cx="32" cy="37" rx="20" ry="21" fill="#ef4444"/>
+    <path d="M32 17v40" stroke="#1f2937" stroke-opacity=".55" stroke-width="2"/>
+    <g fill="#1f2937" opacity=".85">
+      <circle cx="22.5" cy="30" r="4"/><circle cx="41.5" cy="30" r="4"/>
+      <circle cx="21.5" cy="45" r="3.4"/><circle cx="42.5" cy="45" r="3.4"/>
+    </g>
+    <ellipse cx="24" cy="24" rx="6" ry="3.5" fill="#fff" opacity=".4" transform="rotate(-30 24 24)"/>
+  </g>
+  <text class="texto" x="42" y="27.5">Berusky</text>
 </svg>

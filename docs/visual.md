@@ -8,7 +8,10 @@
 - Sem contato de loja: o telefone, o WhatsApp, o mapa, os horários e a página de contato saíram (o jogo não precisa).
   O rodapé mostra os links do `negocio.ts` (o código-fonte primeiro: a GPL pede que quem joga chegue nele) e os
   créditos do jogo original.
-- Ainda é de exemplo: a logo "Sua logo", os ícones e a imagem da prévia do link.
+- A logo (`logo.svg`) e o ícone (`icone.svg`) são a joaninha do jogo; ainda são de exemplo o `favicon.ico`, o
+  `apple-touch-icon.png` e a imagem da prévia do link.
+- O jogo tem visual novo (nenhum desenho do original): os desenhos das peças em `components/jogo/Sprites.vue` e o
+  tabuleiro em `components/jogo/Tabuleiro.vue`, todos no `/guia-de-estilo`. Esperando a aprovação do protótipo.
 
 ## Onde mora cada coisa
 
@@ -59,7 +62,22 @@
 - **O estilo de um modelo baixado:** coloque o modelo, descompactado, em `docs/estilo/` e use o `/trocar-estilo`. Essa
   pasta fica fora do Git e do portão, por causa da licença e do peso do modelo.
 
+## O jogo
+
+- **Os besouros** têm as cores do original (vermelho, verde, azul, bege e violeta) e o número no desenho, para quem não
+  distingue as cores. A chave colorida, a porta colorida e a passagem colorida levam a cor e o número do besouro.
+- **A porta colorida** tem a fechadura (abre com a chave da cor); **a passagem colorida** tem a joaninha (só o besouro
+  da cor passa); **a porta de uma vez** tem o "1" (fecha para sempre ao sair).
+- **O tabuleiro** é um SVG só, com 64 unidades por casa: o chão, o piso e as paredes são um caminho por material, e
+  cada peça é um `<use>` dos desenhos. As paredes vizinhas se emendam num bloco (os cantos de fora ficam redondos).
+- **Os dois temas** seguem o fundo do original: 0 é o jardim (verde) e 1 é a terra (areia). No escuro, os dois ficam
+  mais fundos, para não ofuscar.
+- Peça nova do jogo nasce em `components/jogo` e entra no `/guia-de-estilo`.
+
 ## Armadilhas
+
+- **A cor que nenhuma classe usa:** o Tailwind 4 não publica a variável de uma cor do `@theme` que nenhuma classe usa.
+  Por isso as cores do tabuleiro são variáveis comuns (`:root`), e não `--color-*`.
 
 - A classe de esconder passada para uma peça (`<BaseBotao class="hidden sm:inline-flex">`) perde para a classe da
   própria peça. Esconda numa caixa em volta: `<div class="hidden sm:block"><BaseBotao /></div>`.

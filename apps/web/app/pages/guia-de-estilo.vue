@@ -4,6 +4,7 @@
  * Fica fora do menu e fora do Google (noindex). Peça nova em components/base aparece aqui também.
  */
 import { MessageCircle, PackageOpen } from '@lucide/vue'
+import { ITEM, naCor, Partida } from '@projeto/jogo'
 
 useSeoMeta({
   title: 'Guia de estilo',
@@ -25,6 +26,34 @@ const marca = [
   ['900', 'bg-marca-900'],
   ['950', 'bg-marca-950'],
 ]
+// O jogo: duas fases de verdade, vindas da API (o treino 1, aberto, e a intermediário 6, cheia de portas).
+const { $api } = useNuxtApp()
+const { data: vitrine } = await useAsyncData('guia-fases', async () => {
+  const pedir = (grupo: 'treino' | 'intermediario', numero: number) =>
+    $api.GET('/api/fases/{grupo}/{numero}', { params: { path: { grupo, numero } } })
+  const [treino, intermediaria] = await Promise.all([pedir('treino', 1), pedir('intermediario', 6)])
+  return [treino.data, intermediaria.data].filter((fase) => fase !== undefined)
+})
+const fotos = computed(() => (vitrine.value ?? []).map((fase) => new Partida(fase).foto()))
+
+// Cada peça do jogo, com o nome que aparece na ajuda.
+const pecasDoJogo = [
+  { nome: 'Caixa', item: ITEM.CAIXA },
+  { nome: 'Caixa leve', item: ITEM.CAIXA_LEVE },
+  { nome: 'Explosivo', item: ITEM.EXPLOSIVO },
+  { nome: 'Pedra', item: ITEM.PEDRA },
+  { nome: 'Picareta', item: ITEM.PICARETA },
+  { nome: 'Chave', item: ITEM.CHAVE },
+  { nome: 'Saída', item: ITEM.SAIDA },
+  { nome: 'Chave colorida', item: naCor(ITEM.CHAVE_COLORIDA, 2) },
+  { nome: 'Porta colorida', item: naCor(ITEM.PORTA_H_FECHADA, 3) },
+  { nome: 'Porta aberta', item: naCor(ITEM.PORTA_H_ABERTA, 3) },
+  { nome: 'Passagem colorida', item: naCor(ITEM.PASSAGEM_H_FECHADA, 5) },
+  { nome: 'Passagem aberta', item: naCor(ITEM.PASSAGEM_H_ABERTA, 5) },
+  { nome: 'Porta de uma vez', item: ITEM.UMA_VEZ_H_ABERTA },
+  { nome: 'Fechada de vez', item: ITEM.UMA_VEZ_H_FECHADA },
+].map((peca) => ({ ...peca, desenho: desenhoDaPeca(peca.item) }))
+
 const neutros = [
   ['50', 'bg-stone-50'],
   ['100', 'bg-stone-100'],
@@ -145,6 +174,64 @@ const titulo = 'text-sm font-semibold text-stone-500 dark:text-stone-400'
           <p :class="titulo">Carregando</p>
           <BaseCarregando class="mt-4" :linhas="4" />
         </BaseCartao>
+      </div>
+    </BaseSecao>
+    <BaseSecao
+      titulo="O jogo"
+      subtitulo="Os besouros, as peças e o tabuleiro. Os desenhos moram em components/jogo/Sprites.vue; as cores, no main.css."
+      fundo="suave"
+    >
+      <JogoSprites />
+      <ul class="flex flex-wrap gap-4">
+        <li v-for="(nome, i) in NOMES_DOS_BESOUROS" :key="nome" class="w-20 text-center">
+          <svg viewBox="0 0 64 64" class="mx-auto size-14" aria-hidden="true">
+            <use href="#jogo-besouro" :style="{ '--cor': corDoBesouro(i + 1) }" />
+            <text
+              x="32"
+              y="44"
+              text-anchor="middle"
+              font-size="20"
+              font-weight="800"
+              fill="#fff"
+              stroke="#1f2937"
+              stroke-width="5"
+              paint-order="stroke"
+            >
+              {{ i + 1 }}
+            </text>
+          </svg>
+          <p class="mt-1 text-sm">{{ i + 1 }} · {{ nome }}</p>
+        </li>
+      </ul>
+      <ul class="mt-8 grid grid-cols-3 gap-4 sm:grid-cols-5 lg:grid-cols-7">
+        <li v-for="peca in pecasDoJogo" :key="peca.nome" class="text-center">
+          <svg
+            viewBox="0 0 64 64"
+            class="mx-auto size-14 rounded-lg bg-stone-200/70 dark:bg-stone-800"
+            aria-hidden="true"
+          >
+            <use
+              :href="`#${peca.desenho.simbolo}`"
+              :style="peca.desenho.cor ? { '--cor': corDoBesouro(peca.desenho.cor) } : undefined"
+            />
+          </svg>
+          <p class="mt-1 text-sm">{{ peca.nome }}</p>
+        </li>
+      </ul>
+      <div v-if="vitrine?.length" class="mt-10 space-y-8">
+        <figure v-for="(fase, i) in vitrine" :key="`${fase.grupo}-${fase.numero}`">
+          <div class="overflow-hidden rounded-cartao shadow-sm ring-1 ring-black/5">
+            <JogoTabuleiro
+              :fase="fase"
+              :foto="fotos[i]!"
+              :rotulo="`O tabuleiro da fase ${fase.numero} do grupo ${fase.grupo}`"
+            />
+          </div>
+          <figcaption class="mt-2 text-sm text-stone-600 dark:text-stone-400">
+            {{ fase.grupo === 'treino' ? 'Treino' : 'Intermediário' }}, fase
+            {{ fase.numero }} (fundo {{ fase.fundo }}).
+          </figcaption>
+        </figure>
       </div>
     </BaseSecao>
   </div>

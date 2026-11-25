@@ -1,5 +1,9 @@
 <script setup lang="ts">
 /** A ajuda rápida da partida: os controles (teclado e toque) e as regras em poucas linhas. */
+defineProps<{
+  /** Só os controles (a página Como jogar já tem as regras, com os desenhos). */ soControles?: boolean
+}>()
+
 const teclas = [
   ['Setas ou W, A, S, D', 'Movem a joaninha (com Shift, mais rápido)'],
   ['Tab ou 1 a 5', 'Trocam a joaninha que você comanda'],
@@ -33,7 +37,7 @@ const regras = [
       </dl>
       <p class="mt-2">No celular, use o direcional ou deslize o dedo sobre o tabuleiro.</p>
     </section>
-    <section>
+    <section v-if="!soControles">
       <h3 class="font-semibold text-stone-900 dark:text-white">As regras</h3>
       <ul class="mt-2 list-disc space-y-1 pl-5">
         <li v-for="regra in regras" :key="regra">{{ regra }}</li>

@@ -32,15 +32,17 @@ export function buscarFase(grupo: GrupoId, numero: number): Fase | null {
 }
 
 export type ResultadoDaConclusao =
-  | { tipo: 'venceu'; conclusao: Conclusao }
-  | { tipo: 'nao-existe' }
-  | { tipo: 'nao-venceu' }
+  { tipo: 'venceu'; conclusao: Conclusao } | { tipo: 'nao-existe' } | { tipo: 'nao-venceu' }
 
 /**
  * Confere a vitória: reproduz as jogadas com o mesmo motor da tela. Só a fase vencida de verdade dá a senha da
  * próxima (e, na última do grupo, o texto do fim).
  */
-export function concluirFase(grupo: GrupoId, numero: number, jogadas: string): ResultadoDaConclusao {
+export function concluirFase(
+  grupo: GrupoId,
+  numero: number,
+  jogadas: string,
+): ResultadoDaConclusao {
   const fase = buscarFase(grupo, numero)
   const doGrupo = fases.grupos.find((g) => g.id === grupo)
   if (!fase || !doGrupo) return { tipo: 'nao-existe' }

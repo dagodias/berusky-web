@@ -11,6 +11,7 @@ import {
 import type { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { z } from 'zod'
 import { guard } from '../lib/guard.js'
+import { LEITURA } from '../lib/limites.js'
 import {
   buscarFase,
   buscarPorSenha,
@@ -18,11 +19,7 @@ import {
   listarGrupos,
 } from '../services/fases.service.js'
 
-/**
- * As rotas de leitura das fases. Cada página do jogo pede a fase dela (no servidor e, ao trocar de fase, no
- * navegador): o limite aqui é maior que o geral, que fica para as rotas que mudam alguma coisa.
- */
-const LEITURA = { rateLimit: { max: 600, timeWindow: '1 minute' } }
+/** As fases: as leituras (com o limite de leitura, lib/limites.ts), a conclusão e a senha (com o limite geral). */
 
 const EnderecoSchema = z.object({
   grupo: GrupoIdSchema,
@@ -80,7 +77,8 @@ export const fasesRoutes: FastifyPluginAsyncZod = async (app) => {
     async (request, reply) => {
       const { grupo, numero } = request.params
       const resultado = concluirFase(grupo, numero, request.body.jogadas)
-      if (resultado.tipo === 'nao-existe') return reply.code(404).send({ erro: 'fase_nao_encontrada' })
+      if (resultado.tipo === 'nao-existe')
+        return reply.code(404).send({ erro: 'fase_nao_encontrada' })
       if (resultado.tipo === 'nao-venceu') return reply.code(422).send({ erro: 'fase_nao_vencida' })
       return resultado.conclusao
     },

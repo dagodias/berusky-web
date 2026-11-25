@@ -4,6 +4,21 @@ import { ArrowRight, Bug, KeyRound, Puzzle } from '@lucide/vue'
 
 const { data: negocio, error } = await useNegocio()
 
+// O botão principal: "Jogar" na primeira vez; depois, "Continuar" na fase aberta ainda não vencida.
+const { $api } = useNuxtApp()
+const { data: grupos } = await useAsyncData(
+  'grupos',
+  async () => (await $api.GET('/api/fases')).data,
+)
+const { progresso, carregado } = useProgresso()
+const continuar = computed(() => ondeContinuar(progresso.value, grupos.value ?? []))
+const destino = computed(() =>
+  continuar.value ? `/fases/${continuar.value.grupo}/${continuar.value.numero}` : '/fases',
+)
+const rotuloDoBotao = computed(() =>
+  carregado.value && jaJogou(progresso.value) ? 'Continuar' : 'Jogar',
+)
+
 useSeoMeta({
   title: () => negocio.value?.nome ?? 'Início',
   ogTitle: () => negocio.value?.nome,
@@ -59,10 +74,16 @@ const destaques = [
             {{ negocio.frase }}
           </p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <BaseBotao para="/sobre" tamanho="grande">
-              Conheça o jogo
+            <BaseBotao :para="destino" tamanho="grande">
+              {{ rotuloDoBotao }}
               <ArrowRight class="size-5" aria-hidden="true" />
             </BaseBotao>
+            <BaseBotao para="/fases" variante="secundario" tamanho="grande"
+              >Mapa de fases</BaseBotao
+            >
+            <BaseBotao para="/como-jogar" variante="discreto" tamanho="grande"
+              >Como jogar</BaseBotao
+            >
           </div>
         </div>
       </section>

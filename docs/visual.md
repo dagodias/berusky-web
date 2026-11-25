@@ -11,7 +11,9 @@
 - A logo (`logo.svg`) e o ícone (`icone.svg`) são a joaninha do jogo; ainda são de exemplo o `favicon.ico`, o
   `apple-touch-icon.png` e a imagem da prévia do link.
 - O jogo tem visual novo (nenhum desenho do original): os desenhos das peças em `components/jogo/Sprites.vue` e o
-  tabuleiro em `components/jogo/Tabuleiro.vue`, todos no `/guia-de-estilo`. Esperando a aprovação do protótipo.
+  tabuleiro em `components/jogo/Tabuleiro.vue`, todos no `/guia-de-estilo`. Aprovado em 25/11/2026.
+- As páginas: início (com "Jogar"/"Continuar"), fases (o mapa e a senha), como jogar, sobre e privacidade; a partida
+  usa o layout `jogo`, sem rodapé, com o direcional e os botões só de ícone no celular.
 
 ## Onde mora cada coisa
 

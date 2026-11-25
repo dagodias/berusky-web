@@ -57,14 +57,26 @@ describe('a API', () => {
 
   it('limita as chamadas por visitante, sem cair no IP inventado', async () => {
     // O nginx acrescenta o IP verdadeiro no fim do X-Forwarded-For; o começo, quem visita pode inventar.
+    // O limite geral (100 por minuto) vale para a senha; as leituras têm o limite delas, maior.
     const pedir = (inventado: number) =>
       app.inject({
-        method: 'GET',
-        url: '/api/saude',
+        method: 'POST',
+        url: '/api/senhas',
+        payload: { senha: 'cuwat' },
         headers: { 'x-forwarded-for': `10.0.0.${inventado}, 203.0.113.9` },
       })
     for (let i = 0; i < 100; i++) expect((await pedir(i)).statusCode).toBe(200)
     expect((await pedir(100)).statusCode).toBe(429)
+  })
+
+  it('as leituras aguentam mais que o limite geral (cada página pede duas ou três)', async () => {
+    const pedir = () =>
+      app.inject({
+        method: 'GET',
+        url: '/api/saude',
+        headers: { 'x-forwarded-for': '203.0.113.77' },
+      })
+    for (let i = 0; i < 150; i++) expect((await pedir()).statusCode).toBe(200)
   })
 
   it('documenta as rotas no Swagger', async () => {

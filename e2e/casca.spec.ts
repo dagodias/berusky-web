@@ -6,6 +6,8 @@ import { NegocioSchema } from '@projeto/shared'
 import { expect, test } from '@playwright/test'
 
 const paginas = [
+  { caminho: '/fases', titulo: 'Escolha a fase', aba: 'Fases' },
+  { caminho: '/como-jogar', titulo: 'As regras do jogo', aba: 'Como jogar' },
   { caminho: '/sobre', titulo: 'O jogo e esta versão', aba: 'Sobre' },
   { caminho: '/privacidade', titulo: 'Os seus dados', aba: 'Privacidade' },
 ]

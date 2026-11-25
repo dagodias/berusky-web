@@ -9,9 +9,10 @@ test('mostra o jogo com os dados que vêm da API', async ({ page, request }) => 
   await page.goto('/')
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(negocio.nome)
   await expect(page.getByText(negocio.frase).first()).toBeVisible()
+  // Na primeira vez, "Jogar" leva ao treino 1.
   await expect(
-    page.getByRole('main').getByRole('link', { name: 'Conheça o jogo' }),
-  ).toHaveAttribute('href', '/sobre')
+    page.getByRole('main').getByRole('link', { name: 'Jogar', exact: true }),
+  ).toHaveAttribute('href', '/fases/treino/1')
 })
 
 test('cabe na tela, sem rolar para o lado', async ({ page }) => {

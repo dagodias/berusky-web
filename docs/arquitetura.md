@@ -11,6 +11,8 @@
 - **As regras do jogo moram em `packages/jogo`** (o motor), que a frente e a API usam iguais, como o contrato. A tela
   roda o motor a cada tecla (cada passo precisa responder na hora; esperar a rede a cada tecla não dá) e só desenha;
   a API reproduz as jogadas com o mesmo motor e decide se a fase foi vencida e qual é a senha da próxima.
+- **Os limites de chamadas** (`apps/api/src/lib/limites.ts`): as leituras (a saúde, o negócio e as fases) aguentam
+  600 por minuto, porque cada página pede duas ou três; o limite geral de 100 fica para a conclusão e a senha.
 
 ## O padrão
 

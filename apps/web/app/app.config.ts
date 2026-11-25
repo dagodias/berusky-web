@@ -7,6 +7,8 @@ export default defineAppConfig({
   /** O menu do topo e do rodapé, na ordem em que aparece. Página nova que deve aparecer no menu entra aqui. */
   menu: [
     { rotulo: 'Início', para: '/' },
+    { rotulo: 'Fases', para: '/fases' },
+    { rotulo: 'Como jogar', para: '/como-jogar' },
     { rotulo: 'Sobre', para: '/sobre' },
   ],
   /**

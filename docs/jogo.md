@@ -17,9 +17,11 @@
   a joaninha, guardar e voltar, recomeçar (com confirmação), a dica, a ajuda e a pausa. Ao vencer, a página manda as
   jogadas para `POST /api/fases/{grupo}/{numero}/conclusao`, e a API confere com o motor e devolve a senha da próxima.
 - O progresso fica no navegador (`localStorage`): a fase seguinte abre com a vitória, e a fase fechada pede a anterior
-  ou a senha (`POST /api/senhas` já existe; a tela da senha ainda não).
+  ou a senha.
+- O mapa de fases (`/fases`) mostra os cinco grupos (todos abertos, como no original), cada fase fechada, aberta ou
+  vencida (com o menor número de passos e a senha), e o campo "Tenho uma senha" (`POST /api/senhas`). A página
+  inicial tem "Jogar"/"Continuar", e `/como-jogar` explica cada peça com o desenho dela.
 - As 120 dicas e os 5 textos de fim estão traduzidos (`apps/api/dados/dicas.pt.txt`).
-- Ainda não existe: o mapa de fases (`/fases`), a página "Como jogar" e a tela da senha.
 
 ## As fases do original
 

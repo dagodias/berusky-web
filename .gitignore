@@ -1,0 +1,22 @@
+node_modules/
+.nuxt/
+.output/
+.data/
+dist/
+coverage/
+playwright-report/
+test-results/
+blob-report/
+*.log
+.DS_Store
+
+# O modelo de estilo baixado (docs/visual.md): a licença e o peso dele não vão para o Git
+docs/estilo/
+
+# Senhas e chaves: só no computador e no servidor, nunca no Git
+.env
+.env.*
+!.env.example
+
+# O kit do curso (os guias e o projeto-modelo): referência local, não vai para o repositório público
+/modelo/

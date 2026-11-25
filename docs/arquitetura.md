@@ -1,0 +1,148 @@
+# Arquitetura
+
+## 0. Estado
+
+- 25/11/2026: o projeto nasceu do projeto-modelo do padrão Dagoberto, para a versão web do Berusky, o jogo de lógica
+  livre da Anakreon (GPL). A frente, a API e o contrato funcionam, com o portão ligado. O banco e o login não estão
+  ligados: o progresso de quem joga fica no navegador.
+- A licença é GPL-2.0-or-later no repositório inteiro, inclusive o código que veio do kit, porque o jogo original é GPL
+  e o pacote do navegador leva código derivado dele. Por isso o repositório no GitHub é público (o kit pede privado).
+- O kit do curso (os guias e o projeto-modelo) fica na pasta `modelo/`, fora do Git e do portão.
+
+## O padrão
+
+| Peça                     | O padrão                                                                                                    |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| Linguagem                | TypeScript, nos dois lados                                                                                  |
+| A frente                 | Nuxt 4 (Vue), Tailwind e os ícones Lucide                                                                   |
+| A API                    | Fastify, com o Zod validando cada chamada e o Swagger em `/api/docs` (no ar, fechado)                       |
+| O contrato               | `packages/shared`: os schemas Zod que a frente e a API usam; e o cliente da frente, gerado da API           |
+| O banco                  | PostgreSQL com Prisma, ligado com `/ligar-banco`                                                            |
+| O login                  | Better Auth, ligado com `/ligar-login`                                                                      |
+| Os testes                | Vitest (as regras e as rotas) e Playwright (a tela, num navegador de verdade)                               |
+| A documentação para a IA | O MCP do Nuxt e o `llms.txt` de cada peça: a lista está no CLAUDE.md                                        |
+| A qualidade              | TypeScript estrito, ESLint, Prettier e o portão (Husky no computador, GitHub Actions no GitHub)             |
+| No ar                    | Amazon Lightsail com Ubuntu LTS, nginx, systemd e o cadeado do Let's Encrypt (`docs/publicar.md`)           |
+| O código                 | GitHub, repositório privado (o servidor baixa de lá); o Dependabot pede as atualizações, e o portão confere |
+| A memória                | O CLAUDE.md (o mapa), a pasta docs (o estado e o que falta) e o Swagger em `/api/docs`                      |
+| As IAs do sistema        | Quando o negócio pedir: DeepSeek, OpenAI e Claude, numa fila com reserva (veja abaixo)                      |
+
+## As pastas
+
+```
+apps/web/app/pages/          uma página por arquivo; o nome do arquivo é o endereço
+apps/web/app/layouts/        a casca de todas as páginas: o topo, a página e o rodapé
+apps/web/app/components/     os pedaços da tela: base/ (as peças: botão, cartão, seção...) e site/ (topo,
+                             rodapé, logo); o jeito de usar está no docs/visual.md
+apps/web/app/composables/    o useNegocio: os dados do negócio, uma chamada por página
+apps/web/app/plugins/api.ts  o $api: o único jeito de a frente chamar a API
+apps/web/app/types/api.d.ts  o contrato gerado da API (pnpm contrato; nunca à mão)
+apps/web/app/utils/          funções da tela (os contatos: telefone, WhatsApp e e-mail; o mapa; o horário resumido;
+                             as páginas privadas, sem cache e fora do Google)
+apps/web/app/app.config.ts   o menu e o endereço do site
+apps/web/app/assets/css/     a cara do site: a fonte, a cor da marca e o arredondado (o @theme do Tailwind)
+apps/web/app/error.vue       a página de erro (a que não existe e a que falhou)
+apps/web/public/             a logo, os ícones e a imagem da prévia do link
+apps/api/src/routes/         um arquivo de rotas por assunto
+apps/api/src/services/       as regras do negócio
+apps/api/src/lib/guard.ts    quem pode chamar cada rota
+apps/api/src/config/         os dados do negócio, até o banco entrar
+apps/api/src/env.ts          as configurações, conferidas na subida
+apps/api/scripts/openapi.ts  grava a especificação da API em apps/api/openapi.json
+packages/shared/src/         o contrato
+e2e/                         os testes de tela (Playwright)
+infra/                       preparar o servidor (servidor/) e publicar (publicar.mjs, o pnpm publicar)
+```
+
+Arquivo novo copia o jeito de um irmão recente do mesmo tipo. Nunca inventa estrutura.
+
+## O caminho de uma chamada
+
+```
+O cliente abre a página
+  → o Nuxt monta a página no servidor, que pede os dados com $api.GET('/api/negocio') (pelo useNegocio)
+  → no servidor, o $api fala direto com a API; no navegador, chama /api, que o Nuxt
+    (no computador) ou o nginx (no servidor) repassa
+  → Fastify: o guard (quem pode) → o Zod (os dados vieram certos?) → a rota chama o service
+  → o service decide (e, com o banco ligado, consulta o PostgreSQL pelo Prisma)
+  → a API devolve JSON → a página mostra
+```
+
+## O contrato, de ponta a ponta
+
+```
+packages/shared (Zod)  → a rota da API usa o schema na entrada e na resposta
+  → o Swagger descreve a rota em /api/docs
+  → pnpm contrato grava apps/api/openapi.json e gera apps/web/app/types/api.d.ts
+  → o $api da frente só aceita caminho e campo que a API tem: o pnpm typecheck confere
+  → o portão confere que os dois arquivos gerados batem com a API
+```
+
+Mudou uma rota: `pnpm contrato` e o commit dos dois arquivos gerados. Se o `pnpm typecheck` acusar o `$api`, a frente
+e a API discordam: conserte a causa, nunca o tipo.
+
+## As camadas
+
+| Camada     | Pode                                                                          | Não pode                                        |
+| ---------- | ----------------------------------------------------------------------------- | ----------------------------------------------- |
+| Layout     | A casca: pede os dados do negócio (useNegocio) e passa ao topo e ao rodapé    | Regra de negócio, guardar segredo               |
+| Página     | Mostrar, chamar a API pelo `$api`, usar componentes                           | Regra de negócio, guardar segredo               |
+| Componente | Um pedaço da tela; recebe dados pelas props                                   | Chamar a API direto, decidir preço ou permissão |
+| Rota (API) | Receber, validar com Zod, passar pelo guard, chamar o service, responder JSON | HTML, regra de negócio grande                   |
+| Service    | As regras do negócio (e o banco, quando ligado)                               | Saber de HTTP                                   |
+
+## As regras absolutas
+
+**Nunca:** a frente falar com o banco; regra de negócio na página; rota sem guard; rota sem schema Zod; a API devolver
+HTML; senha, token ou chave na resposta, no Git ou na conversa; `any` sem motivo escrito; o preço decidido no navegador.
+
+**Sempre:** o `$api` para chamar a API; o guard em toda rota (até na pública); schema Zod na entrada e na resposta;
+o `pnpm contrato` depois de mudar uma rota; as peças de `components/base` na tela (`docs/visual.md`); dinheiro em
+centavos, número inteiro; a hora de Brasília para mostrar; o
+teste junto com a funcionalidade (e o teste de tela, em `e2e/`, quando ela aparece na tela); a documentação oficial
+da peça antes de usar o que o projeto ainda não usa; o imposto da documentação no fim de cada trabalho.
+
+## As camadas que se ligam quando precisa
+
+- **O banco** (`/ligar-banco`): quando o projeto começar a guardar dados. PostgreSQL com Prisma 7. Tudo o que o
+  negócio precisa guardar mora nele: os pedidos dos clientes (com o número e o andamento), o catálogo e o cadastro;
+  nunca na memória da API nem no navegador. O primeiro modelo é o `Negocio`, com o que hoje está no
+  `config/negocio.ts`, que vira a semente; os produtos vão para o banco junto com o catálogo.
+- **O login** (`/ligar-login`): quando nascer a área com senha. Better Auth, com o banco já ligado: a página `/entrar`
+  e o `/painel` do dono, de onde o painel cresce.
+- **As IAs do sistema**: quando o negócio quiser a IA trabalhando (ler a foto dos produtos, tirar as dúvidas no site).
+  Sempre pela API, nunca pela frente; a chave de cada uma só no `.env`; uma fila com reserva, o banco de IAs (se a
+  primeira falhar, a próxima responde), com o custo de cada chamada registrado. O que a IA propõe, o dono confere antes
+  de valer, e o texto que chega de fora nunca vira ordem para ela.
+- **Os serviços de fora**: quando o negócio pedir, o e-mail que avisa o dono do pedido novo, o WhatsApp para chamar o
+  cliente, o pagamento por PIX, o CEP e o app de celular. Todos pela mesma API, com a chave no `.env`. O pedido nunca
+  depende deles: ele é guardado primeiro, e a falha do serviço vai para o registro.
+
+## A segurança, por desenho
+
+A proteção vem do jeito que o projeto é montado, não da memória de quem programa:
+
+1. **Uma porta só:** da internet, só se chega ao nginx, com o cadeado; a API e o banco atendem só dentro da máquina.
+2. **A frente não decide nada:** preço, permissão e "aberto agora" saem da API.
+3. **Toda entrada é conferida** pelo Zod, antes de chegar na regra.
+4. **Toda rota tem guard**, até a pública: rota `/api/*` sem guard faz a API recusar subir.
+5. **Nenhum SQL montado à mão:** o Prisma monta as consultas.
+6. **Segredo num lugar só:** o `.env` do servidor, nunca no Git, na conversa ou no registro.
+7. **O portão barra antes de entrar:** no commit, no envio e no GitHub.
+8. **Ninguém mexe direto no servidor:** só vai ao ar o que está no GitHub, pelo `pnpm publicar`; deu problema, volta a
+   versão anterior.
+9. **O servidor se cuida:** atualização automática, entrada só por chave (conferida pelo `sshd -T`), o fail2ban, o
+   backup do banco e das fotos todo dia, e o root só roda os scripts instalados em `/usr/local/lib/<projeto>/`.
+10. **As bibliotecas são vigiadas:** o Dependabot pede a atualização, e ela passa pelo portão.
+
+Nos detalhes: as páginas saem com os cabeçalhos de segurança (o `apps/web/server/middleware/seguranca.ts`); as privadas (o painel, a entrada e
+o pedido, no `app/utils/privadas.ts`) não ficam guardadas, não passam o endereço adiante e ficam fora do Google; o
+`/api/docs` fica fechado no ar (abre só com `DOCS_NO_AR=true` no `.env`); a frente não consegue ler o `.env` da API;
+e, com o login ligado, as rotas que mudam dado conferem a origem (o `/ligar-login`).
+
+## Fica para depois
+
+- Sons e música (o pacote de dados do original não tem áudio).
+- Perfis com nome, como no original; recordes guardados no servidor, com o banco e o login.
+- O editor de fases, o "desfazer jogada" (o original não tem), jogar sem internet e as fases extras dos jogadores.
+- Publicar no Lightsail, com o PUBLICACAO-DAGOBERTO.md (na pasta `modelo/`).

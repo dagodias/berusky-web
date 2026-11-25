@@ -1,0 +1,18 @@
+pnpm-lock.yaml
+.nuxt
+.output
+dist
+coverage
+playwright-report
+test-results
+
+# a página antiga do negócio (guardada como estava) e o modelo de estilo baixado (fora do Git)
+docs/original
+docs/estilo
+
+# gerados pelo pnpm contrato
+apps/api/openapi.json
+apps/web/app/types/api.d.ts
+
+# o kit do curso (referência local, fora do Git)
+modelo

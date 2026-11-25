@@ -51,7 +51,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Os dados públicos do negócio: nome, horários, produtos disponíveis e se está aberto agora */
+        /** Os dados do jogo: o nome, a frase e os links (o código-fonte e o original) */
         get: {
             parameters: {
                 query?: never;
@@ -70,30 +70,13 @@ export interface paths {
                         "application/json": {
                             nome: string;
                             frase: string;
-                            telefone: string;
-                            temWhatsapp: boolean;
                             /** Format: email */
                             email?: string;
-                            endereco: string;
-                            horarios: {
-                                dia: number;
-                                abre: string;
-                                fecha: string;
-                            }[];
-                            produtos: {
-                                id: string;
-                                nome: string;
-                                descricao: string;
-                                precoCentavos: number;
-                                foto: string | null;
-                                disponivel: boolean;
-                            }[];
-                            redes: {
+                            links: {
                                 nome: string;
                                 /** Format: uri */
                                 endereco: string;
                             }[];
-                            abertoAgora: boolean;
                         };
                     };
                 };

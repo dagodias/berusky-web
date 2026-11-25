@@ -1,83 +1,99 @@
 <script setup lang="ts">
-/** A página Sobre, de exemplo: a história e o que o negócio valoriza. Troque os textos pelos seus. */
-import { HeartHandshake, MapPin, Sparkles } from '@lucide/vue'
+/**
+ * A página Sobre: o que é o Berusky, o que esta versão muda (só o visual) e os créditos do jogo original, que a GPL
+ * e o respeito pedem. Os links (o código-fonte e o original) vêm da API.
+ */
+const { data: negocio } = await useNegocio()
 
 useSeoMeta({
   title: 'Sobre',
   ogTitle: 'Sobre',
-  description: 'A nossa história e o que importa para a gente.',
-  ogDescription: 'A nossa história e o que importa para a gente.',
+  description: 'O Berusky, o jogo original da Anakreon, e esta versão web, livre como ele.',
+  ogDescription: 'O Berusky, o jogo original da Anakreon, e esta versão web, livre como ele.',
 })
 
-// Exemplo: troque pelo que o seu negócio valoriza.
-const valores = [
+// Os créditos do original, do arquivo credits.dat do jogo (GameData), na mesma ordem.
+const creditos = [
+  { funcao: 'Programação', nomes: ['Martin "komat" Stránský'] },
+  { funcao: 'Regras do jogo e desenho das fases', nomes: ['Luboš "Shobul" Doležal'] },
+  { funcao: 'Gráficos do jogo', nomes: ['Jan "Riva" Halfar'] },
+  { funcao: 'Gráficos do menu e logos', nomes: ['Václav "Mega" Hlobil'] },
+  { funcao: 'Som e música', nomes: ['Martin Linda'] },
+  { funcao: 'Tradução para o inglês', nomes: ['Radek Biba'] },
+  { funcao: 'Revisão do texto', nomes: ['Michal "Mipo" Policky'] },
   {
-    icone: Sparkles,
-    titulo: 'Qualidade',
-    texto: 'O que sai daqui é o que a gente serviria em casa.',
-  },
-  {
-    icone: HeartHandshake,
-    titulo: 'Atendimento',
-    texto: 'Do outro lado tem gente, que responde sem demora.',
-  },
-  {
-    icone: MapPin,
-    titulo: 'Perto de você',
-    texto: 'Um negócio do bairro, que conhece quem atende.',
+    funcao: 'Agradecimentos',
+    nomes: [
+      'Michal Simonik',
+      'Pavel Dolezal',
+      'Milan Hamrik',
+      'Jan Chalupa',
+      'Igor Blaha',
+      'Patrik Sykora',
+      'Eva Sykorova',
+      'Milan Crha',
+      'Mary Stranska',
+    ],
   },
 ]
+
+const codigoFonte = computed(() => negocio.value?.links[0]?.endereco)
+const original = computed(() => negocio.value?.links[1]?.endereco)
 </script>
 
 <template>
   <div>
     <BaseCabecalho
       rotulo="Sobre"
-      titulo="A nossa história"
-      subtitulo="Conte em poucas linhas quem vocês são e por que fazem o que fazem."
-      exemplo
+      titulo="O jogo e esta versão"
+      subtitulo="O Berusky é software livre desde o começo. Esta versão web também é."
     />
 
     <BaseSecao>
-      <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-        <div class="space-y-5 text-lg text-stone-700 dark:text-stone-300">
-          <p>
-            Comece pelo começo: quem abriu o negócio, em que ano e por quê. Uma história curta e
-            verdadeira vale mais que muitas palavras bonitas.
-          </p>
-          <p>
-            Depois, o que faz de vocês diferentes: o jeito de atender, o cuidado com o produto, a
-            ligação com o bairro.
-          </p>
-          <p>
-            Termine com o convite: o telefone, o endereço e o horário estão na página de contato.
-          </p>
-          <BaseBotao para="/contato" variante="secundario">Ver o contato</BaseBotao>
-        </div>
-        <img
-          src="/exemplo/foto.svg"
-          alt="Exemplo: troque por uma foto do negócio ou da equipe"
-          width="1200"
-          height="900"
-          class="aspect-[4/3] w-full rounded-3xl border border-stone-200 object-cover dark:border-stone-800"
-        />
+      <div class="max-w-3xl space-y-5 text-lg text-stone-700 dark:text-stone-300">
+        <p>
+          O Berusky é um jogo de lógica criado pela Anakreon, na República Tcheca, no fim dos anos
+          1990. Ele parte da velha ideia de empurrar caixas num labirinto e acrescenta explosivos,
+          pedras, portas coloridas e até cinco joaninhas ("berušky", em tcheco) que você comanda uma
+          de cada vez.
+        </p>
+        <p>
+          Esta é uma versão web <strong>não oficial</strong>. As 120 fases e todas as regras são as
+          do jogo original (a versão 1.7.2); o que mudou foi o visual, desenhado de novo, e o jeito
+          de jogar no celular.
+        </p>
+        <p>
+          O código desta versão é livre, sob a mesma licença do original: a GNU GPL, versão 2 ou
+          mais nova.
+          <a v-if="codigoFonte" :href="codigoFonte" class="font-medium underline underline-offset-4"
+            >Veja o código-fonte</a
+          ><template v-if="codigoFonte && original"> ou </template>
+          <a v-if="original" :href="original" class="font-medium underline underline-offset-4"
+            >conheça o original</a
+          >.
+        </p>
       </div>
     </BaseSecao>
 
-    <BaseSecao titulo="O que importa para a gente" fundo="suave" exemplo>
-      <ul class="grid gap-5 sm:grid-cols-3">
-        <li v-for="valor in valores" :key="valor.titulo">
-          <BaseCartao class="h-full">
-            <span
-              class="grid size-10 place-items-center rounded-full bg-marca-50 text-marca-700 dark:bg-marca-950 dark:text-marca-300"
-            >
-              <component :is="valor.icone" class="size-5" aria-hidden="true" />
-            </span>
-            <h3 class="mt-4 text-lg font-semibold">{{ valor.titulo }}</h3>
-            <p class="mt-1.5 text-stone-600 dark:text-stone-400">{{ valor.texto }}</p>
-          </BaseCartao>
-        </li>
-      </ul>
+    <BaseSecao
+      titulo="Quem criou o Berusky"
+      subtitulo="O jogo original, as fases e as regras: © 1997–2020 AnakreoN, sob a GPL."
+      fundo="suave"
+    >
+      <dl class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <BaseCartao v-for="credito in creditos" :key="credito.funcao" class="h-full">
+          <dt class="text-sm font-semibold text-marca-700 dark:text-marca-400">
+            {{ credito.funcao }}
+          </dt>
+          <dd
+            v-for="nome in credito.nomes"
+            :key="nome"
+            class="mt-1 text-stone-700 dark:text-stone-300"
+          >
+            {{ nome }}
+          </dd>
+        </BaseCartao>
+      </dl>
     </BaseSecao>
   </div>
 </template>

@@ -3,10 +3,10 @@
  * O topo de todas as páginas: a logo e o menu. No celular, o menu abre num botão.
  * Os itens do menu moram no app.config.ts.
  */
-import type { NegocioPublico } from '@projeto/shared'
+import type { Negocio } from '@projeto/shared'
 import { Menu, X } from '@lucide/vue'
 
-defineProps<{ negocio?: NegocioPublico | null }>()
+defineProps<{ negocio?: Negocio | null }>()
 
 const { menu } = useAppConfig()
 const route = useRoute()

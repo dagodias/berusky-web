@@ -1,4 +1,4 @@
-import { NegocioPublicoSchema } from '@projeto/shared'
+import { NegocioSchema } from '@projeto/shared'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { docsAbertos } from '../src/env.js'
 import { criarServidor } from '../src/server.js'
@@ -24,7 +24,7 @@ describe('a API', () => {
   it('devolve o negócio no formato do contrato', async () => {
     const resposta = await app.inject({ method: 'GET', url: '/api/negocio' })
     expect(resposta.statusCode).toBe(200)
-    expect(NegocioPublicoSchema.safeParse(resposta.json()).success).toBe(true)
+    expect(NegocioSchema.safeParse(resposta.json()).success).toBe(true)
   })
 
   it('limita as chamadas por visitante, sem cair no IP inventado', async () => {

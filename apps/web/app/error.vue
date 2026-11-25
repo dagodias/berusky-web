@@ -31,7 +31,7 @@ function voltar() {
           {{
             naoExiste
               ? 'O endereço pode ter mudado ou ter sido digitado errado.'
-              : 'Tente de novo daqui a pouco. Se continuar, fale com a gente pela página de contato.'
+              : 'Tente de novo daqui a pouco. Se continuar, avise no código-fonte do projeto (o link está no rodapé).'
           }}
         </p>
         <div class="mt-8 flex justify-center">

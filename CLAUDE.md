@@ -1,7 +1,7 @@
-# Projeto
+# Berusky · versão web
 
-Este projeto nasceu do projeto-modelo do padrão Dagoberto: a frente (Nuxt) e a API (Fastify) separadas, TypeScript
-nos dois lados. O DOCUMENTACAO-DAGOBERTO.md troca este parágrafo pelo que o projeto é, em duas linhas.
+A versão web não oficial do Berusky, o jogo de lógica livre da Anakreon (GPL): as 120 fases e as regras do original,
+com um visual novo. Nasceu do projeto-modelo do padrão Dagoberto; o repositório é público e GPL-2.0-or-later.
 
 ## Onde mora cada coisa
 
@@ -9,7 +9,7 @@ nos dois lados. O DOCUMENTACAO-DAGOBERTO.md troca este parágrafo pelo que o pro
 | ------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
 | O padrão, as pastas, as regras, a segurança e o que se liga depois (o banco, o login, as IAs, os serviços de fora) | docs/arquitetura.md                                                              |
 | As rotas da API                                                                                                    | http://localhost:3333/api/docs (o Swagger) e apps/api/src/routes                 |
-| Os dados do negócio (até o banco entrar)                                                                           | apps/api/src/config/negocio.ts                                                   |
+| Os dados do jogo: o nome, a frase e os links (aqui, "o negócio" é o jogo)                                          | apps/api/src/config/negocio.ts                                                   |
 | A cara do site: logo, cores, fonte, menu, peças                                                                    | docs/visual.md (as peças juntas em http://localhost:3000/guia-de-estilo)         |
 | O contrato entre a frente e a API                                                                                  | packages/shared/src/index.ts (os schemas Zod)                                    |
 | O contrato gerado da API (nunca se edita à mão)                                                                    | apps/api/openapi.json e apps/web/app/types/api.d.ts, feitos pelo `pnpm contrato` |

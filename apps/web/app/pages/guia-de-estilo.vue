@@ -132,7 +132,7 @@ const titulo = 'text-sm font-semibold text-stone-500 dark:text-stone-400'
         <BaseCartao>
           <p :class="titulo">Cartão</p>
           <h3 class="mt-3 text-lg font-semibold">Um assunto por cartão</h3>
-          <p class="mt-1.5 text-stone-600 dark:text-stone-400">Um produto, um contato, um passo.</p>
+          <p class="mt-1.5 text-stone-600 dark:text-stone-400">Uma fase, uma regra, um passo.</p>
         </BaseCartao>
         <BaseVazio
           :icone="PackageOpen"

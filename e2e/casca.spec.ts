@@ -1,18 +1,17 @@
 /**
- * A casca do site num navegador de verdade: as páginas de base, o contato e o rodapé, o menu do celular, o
+ * A casca do site num navegador de verdade: as páginas de base, o rodapé com o código-fonte, o menu do celular, o
  * teclado, a página de erro, o guia de estilo, o modo escuro e os arquivos da prévia do link.
  */
-import { type NegocioPublico, NegocioPublicoSchema } from '@projeto/shared'
-import { expect, type Locator, test } from '@playwright/test'
+import { NegocioSchema } from '@projeto/shared'
+import { expect, test } from '@playwright/test'
 
 const paginas = [
-  { caminho: '/sobre', titulo: 'A nossa história', aba: 'Sobre' },
-  { caminho: '/contato', titulo: 'Fale com a gente', aba: 'Contato' },
+  { caminho: '/sobre', titulo: 'O jogo e esta versão', aba: 'Sobre' },
   { caminho: '/privacidade', titulo: 'Os seus dados', aba: 'Privacidade' },
 ]
 
 test('cada página abre com o seu título e cabe na tela', async ({ page, request }) => {
-  const negocio = NegocioPublicoSchema.parse(await (await request.get('/api/negocio')).json())
+  const negocio = NegocioSchema.parse(await (await request.get('/api/negocio')).json())
 
   for (const pagina of paginas) {
     await page.goto(pagina.caminho)
@@ -25,40 +24,16 @@ test('cada página abre com o seu título e cabe na tela', async ({ page, reques
   }
 })
 
-/** O telefone sempre; o WhatsApp só se o número atende nele; o e-mail só se o negócio tem. */
-async function conferirContatos(lugar: Locator, negocio: NegocioPublico) {
-  await expect(lugar.getByRole('link', { name: /^Telefone/ })).toHaveAttribute(
-    'href',
-    `tel:+${negocio.telefone}`,
-  )
-  const whatsapp = lugar.getByRole('link', { name: /^WhatsApp/ })
-  if (negocio.temWhatsapp) {
-    await expect(whatsapp).toHaveAttribute(
-      'href',
-      new RegExp(`^https://wa\\.me/${negocio.telefone}\\?text=`),
-    )
-  } else {
-    await expect(whatsapp).toHaveCount(0)
-  }
-  const email = lugar.getByRole('link', { name: /^E-mail/ })
-  if (negocio.email) {
-    await expect(email).toHaveAttribute('href', `mailto:${negocio.email}`)
-  } else {
-    await expect(email).toHaveCount(0)
-  }
-}
-
-test('o contato mostra os jeitos de falar com o negócio', async ({ page, request }) => {
-  const negocio = NegocioPublicoSchema.parse(await (await request.get('/api/negocio')).json())
-  await page.goto('/contato')
-  await conferirContatos(page.getByRole('main'), negocio)
-})
-
-test('o rodapé traz os contatos e o caminho da privacidade', async ({ page, request }) => {
-  const negocio = NegocioPublicoSchema.parse(await (await request.get('/api/negocio')).json())
+test('o rodapé leva ao código-fonte (a GPL pede) e à privacidade', async ({ page, request }) => {
+  const negocio = NegocioSchema.parse(await (await request.get('/api/negocio')).json())
+  const [codigo] = negocio.links
   await page.goto('/')
   const rodape = page.getByRole('contentinfo')
-  await conferirContatos(rodape, negocio)
+  await expect(rodape.getByRole('link', { name: 'Código-fonte (GPL)' })).toHaveAttribute(
+    'href',
+    codigo?.endereco ?? '',
+  )
+  await expect(rodape.getByText(/AnakreoN/)).toBeVisible()
   await rodape.getByRole('link', { name: 'Privacidade' }).click()
   await expect(page).toHaveURL(/\/privacidade$/)
 })
@@ -75,8 +50,8 @@ test('o menu do celular abre, leva à página e fecha', async ({ page, isMobile 
     await expect(menu).toBeVisible({ timeout: 1000 })
   }).toPass()
 
-  await menu.getByRole('link', { name: 'Contato' }).click()
-  await expect(page).toHaveURL(/\/contato$/)
+  await menu.getByRole('link', { name: 'Sobre' }).click()
+  await expect(page).toHaveURL(/\/sobre$/)
   await expect(menu).toBeHidden()
   await expect(botao).toHaveAttribute('aria-expanded', 'false')
 })

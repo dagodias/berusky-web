@@ -106,4 +106,5 @@
 
 ## Pendências
 
-- nenhuma
+- P-001 (sons), P-002 (perfis), P-004 (editor), P-005 (desfazer), P-007 (fases extras), P-008 (mais
+  soluções) e P-009 (comparar com o original rodando), no `docs/pendente.md`.

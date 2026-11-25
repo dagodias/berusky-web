@@ -1,4 +1,17 @@
+import { execSync } from 'node:child_process'
 import tailwindcss from '@tailwindcss/vite'
+
+/**
+ * O commit do código que vai no build: a página Sobre mostra e leva até ele (a GPL pede que quem joga chegue ao
+ * código exato do que está no ar). Sem o Git, fica vazio.
+ */
+function commitDoCodigo(): string {
+  try {
+    return execSync('git rev-parse HEAD', { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim()
+  } catch {
+    return ''
+  }
+}
 
 // Os cabeçalhos de segurança das páginas (e os das privadas) moram no server/middleware/seguranca.ts.
 export default defineNuxtConfig({
@@ -14,6 +27,7 @@ export default defineNuxtConfig({
   // Na página montada no servidor, o $api fala direto com a API, sem dar a volta pelo /api.
   runtimeConfig: {
     apiInterna: 'http://127.0.0.1:3333',
+    public: { commitDoCodigo: commitDoCodigo() },
   },
   app: {
     head: {

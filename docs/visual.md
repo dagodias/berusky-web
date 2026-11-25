@@ -8,8 +8,8 @@
 - Sem contato de loja: o telefone, o WhatsApp, o mapa, os horários e a página de contato saíram (o jogo não precisa).
   O rodapé mostra os links do `negocio.ts` (o código-fonte primeiro: a GPL pede que quem joga chegue nele) e os
   créditos do jogo original.
-- A logo (`logo.svg`) e o ícone (`icone.svg`) são a joaninha do jogo; ainda são de exemplo o `favicon.ico`, o
-  `apple-touch-icon.png` e a imagem da prévia do link.
+- A logo (`logo.svg`), os ícones (`icone.svg`, `favicon.ico`, `apple-touch-icon.png`) e a prévia do link
+  (`previa.png`) são a joaninha do jogo. Os PNG saíram do `icone.svg`, desenhados pelo navegador dos testes.
 - O jogo tem visual novo (nenhum desenho do original): os desenhos das peças em `components/jogo/Sprites.vue` e o
   tabuleiro em `components/jogo/Tabuleiro.vue`, todos no `/guia-de-estilo`. Aprovado em 25/11/2026.
 - As páginas: início (com "Jogar"/"Continuar"), fases (o mapa e a senha), como jogar, sobre e privacidade; a partida
@@ -90,4 +90,4 @@
 
 ## Pendências
 
-- nenhuma
+- P-011 (jogar num celular de verdade), no `docs/pendente.md`.

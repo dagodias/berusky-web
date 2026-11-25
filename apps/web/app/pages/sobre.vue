@@ -39,6 +39,12 @@ const creditos = [
 
 const codigoFonte = computed(() => negocio.value?.links[0]?.endereco)
 const original = computed(() => negocio.value?.links[1]?.endereco)
+
+// O commit do código que está no ar (anotado no build, no nuxt.config.ts).
+const { commitDoCodigo } = useRuntimeConfig().public
+const linkDoCommit = computed(() =>
+  codigoFonte.value && commitDoCodigo ? `${codigoFonte.value}/tree/${commitDoCodigo}` : undefined,
+)
 </script>
 
 <template>
@@ -71,6 +77,13 @@ const original = computed(() => negocio.value?.links[1]?.endereco)
           <a v-if="original" :href="original" class="font-medium underline underline-offset-4"
             >conheça o original</a
           >.
+        </p>
+        <p v-if="linkDoCommit" class="text-base text-stone-600 dark:text-stone-400">
+          Esta versão do site é o commit
+          <a :href="linkDoCommit" class="font-mono underline underline-offset-4" data-commit>{{
+            commitDoCodigo.slice(0, 7)
+          }}</a>
+          do código-fonte.
         </p>
       </div>
     </BaseSecao>

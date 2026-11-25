@@ -26,6 +26,14 @@ test('cada página abre com o seu título e cabe na tela', async ({ page, reques
   }
 })
 
+test('o Sobre mostra o commit do código que está no ar, com o link para ele', async ({ page }) => {
+  await page.goto('/sobre')
+  await expect(page.locator('[data-commit]')).toHaveAttribute(
+    'href',
+    /^https:\/\/github\.com\/.+\/tree\/[0-9a-f]{40}$/,
+  )
+})
+
 test('o rodapé leva ao código-fonte (a GPL pede) e à privacidade', async ({ page, request }) => {
   const negocio = NegocioSchema.parse(await (await request.get('/api/negocio')).json())
   const [codigo] = negocio.links

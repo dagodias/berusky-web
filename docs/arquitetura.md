@@ -150,7 +150,4 @@ e, com o login ligado, as rotas que mudam dado conferem a origem (o `/ligar-logi
 
 ## Fica para depois
 
-- Sons e música (o pacote de dados do original não tem áudio).
-- Perfis com nome, como no original; recordes guardados no servidor, com o banco e o login.
-- O editor de fases, o "desfazer jogada" (o original não tem), jogar sem internet e as fases extras dos jogadores.
-- Publicar no Lightsail, com o PUBLICACAO-DAGOBERTO.md (na pasta `modelo/`).
+- O que ficou para depois mora no `docs/pendente.md` (P-001 a P-011).

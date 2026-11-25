@@ -8,6 +8,9 @@
 - A licença é GPL-2.0-or-later no repositório inteiro, inclusive o código que veio do kit, porque o jogo original é GPL
   e o pacote do navegador leva código derivado dele. Por isso o repositório no GitHub é público (o kit pede privado).
 - O kit do curso (os guias e o projeto-modelo) fica na pasta `modelo/`, fora do Git e do portão.
+- **As regras do jogo moram em `packages/jogo`** (o motor), que a frente e a API usam iguais, como o contrato. A tela
+  roda o motor a cada tecla (cada passo precisa responder na hora; esperar a rede a cada tecla não dá) e só desenha;
+  a API reproduz as jogadas com o mesmo motor e decide se a fase foi vencida e qual é a senha da próxima.
 
 ## O padrão
 
@@ -32,8 +35,8 @@
 ```
 apps/web/app/pages/          uma página por arquivo; o nome do arquivo é o endereço
 apps/web/app/layouts/        a casca de todas as páginas: o topo, a página e o rodapé
-apps/web/app/components/     os pedaços da tela: base/ (as peças: botão, cartão, seção...) e site/ (topo,
-                             rodapé, logo); o jeito de usar está no docs/visual.md
+apps/web/app/components/     os pedaços da tela: base/ (as peças: botão, cartão, seção...), site/ (topo,
+                             rodapé, logo) e jogo/ (os desenhos e o tabuleiro); o jeito de usar está no docs/visual.md
 apps/web/app/composables/    o useNegocio: os dados do negócio, uma chamada por página
 apps/web/app/plugins/api.ts  o $api: o único jeito de a frente chamar a API
 apps/web/app/types/api.d.ts  o contrato gerado da API (pnpm contrato; nunca à mão)
@@ -52,6 +55,7 @@ apps/api/scripts/fases.ts    o conversor: os arquivos originais viram o fases.js
 apps/api/src/env.ts          as configurações, conferidas na subida
 apps/api/scripts/openapi.ts  grava a especificação da API em apps/api/openapi.json
 packages/shared/src/         o contrato
+packages/jogo/src/           o motor do jogo: as regras do original, sem tela (a página desenha, a API confere)
 e2e/                         os testes de tela (Playwright)
 infra/                       preparar o servidor (servidor/) e publicar (publicar.mjs, o pnpm publicar)
 ```

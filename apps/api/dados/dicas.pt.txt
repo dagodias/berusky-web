@@ -1,0 +1,291 @@
+# As dicas das fases e os textos do fim de cada grupo, traduzidos do Berusky original (hints.dat e end0-4.dat).
+# Cada texto começa com a marca dele: ~1_1 é a fase 1 do treino; ~fim_1 é o texto do fim do treino. O "~" sozinho fecha.
+~1_1
+A primeira fase é bem ilustrativa. Você só vai conferir como as joaninhas realmente se movem, e não vai precisar se sobrecarregar com pensamentos nem com qualquer atividade parecida. Claro, você pode experimentar todas as teclas do jogo, principalmente a tecla "H", que pode lhe dar um conjunto relativamente grande de dicas. Ela vai ser útil no começo, pode confiar em nós...
+~1_2
+Esta fase é focada na manipulação de explosivos. Experimente na prática o que dá para destruir usando os explosivos em Berusky. E, por favor, não ligue para o número de telefone, ele é só decoração, e o dono da linha, o Sr. Mrazek, doutor em filosofia, ficaria um pouco bravo com você, imagino.
+~1_3
+Outro elemento interessante em Berusky é a picareta. Vamos falar dela na fase depois da próxima, mas você já pode testar a função dela junto com os outros elementos do jogo. Aliás, além da picareta, também existe em Berusky um pequeno martelo pneumático, feito para o mesmo fim: remover pedras.
+~1_4
+Agora é a vez dos fãs de aço pesado. Com a ajuda dele dá para esmigalhar pedras e abrir caminho até áreas inacessíveis. Mas ele tem uma desvantagem considerável. As pedras de Berusky são tão terrivelmente resistentes que, depois de quebrar uma, você pode jogar a ferramenta cega fora e começar a procurar uma nova.
+~1_5
+Você com certeza já viu uma porta em Berusky, afinal você sai de cada fase por uma delas. O que você vai ver agora é uma porta muito especial, de uma passagem só. Bem, na verdade ela nem é tão especial assim, só tem uma característica interessante. Depois que você passa por ela, ela se fecha e não há como abri-la de novo. Só trapaceando, mas vamos falar disso mais tarde.
+~1_6
+Já conhecemos caixas, barris e outras tranqueiras. A fase a seguir serve para você treinar deslizar, mover e empurrar essas coisas para longe... Enfim, você vai ficar movendo tudo isso até chegar na saída com as cinco chaves.
+~1_7
+Você já tem seis fases nas costas, e isso realmente não é nada mal. Depois que terminar de jogar Berusky, você pode ter um crescimento significativo no volume de massa cinzenta, às vezes de até meio por cento! Um camarada chegou até a amadurecer jogando Berusky. Mas ele começou aos dez anos e terminou aos dezenove, então talvez a culpa não seja do jogo, vai saber...
+~1_8
+As joaninhas se diferenciam pela cor. Podemos listá-las uma por uma: vermelha, verde, azul, bege e violeta. Isso tem um significado no jogo. Alguns elementos estão ligados a uma joaninha pela cor. Um deles é a passagem colorida. Só uma joaninha da mesma cor consegue atravessá-la.
+~1_9
+O último elemento é a porta colorida. Só uma chave especial da mesma cor consegue abri-la e, para dificultar, só uma joaninha da mesma cor pode pegar a chave. Depois de aberta, ela fica livre para os outros insetos também, e até uma caixa ou um explosivo pode ser empurrado através dela.
+~1_10
+Como você já conheceu todos os elementos do jogo, o último exame vai ser uma fase um pouco mais difícil, contendo tudo o que você teve a chance de ver até agora, mais uma novidade: a cooperação entre os amigos insetos. Para resolver a fase, você vai ter que envolver não uma ou duas, mas todas as cinco joaninhas para chegar ao resultado desejado.
+~2_1
+A primeira fase desta dificuldade pode ser incluída com tranquilidade entre as ultrafáceis. Na verdade, até as fases difíceis não são difíceis para quem sabe o que fazer. Além disso, vale a regra dos jogos de computador: se não há inteligência nem habilidade, há trapaça. Quando você terminar esta fase, vamos revelar algumas trapaças.
+~2_2
+Como prometemos, aqui estão as trapaças:
+"CTRL+ALT+E" - sair da fase,
+"CTRL+ALT+SHIFT+A" - cinco chaves,
+"CTRL+SHIFT+W" - atravessar a parede,
+"ALT+SHIFT+S" - mais uma picareta,
+"CTRL+ALT+D" - abrir todas as portas
+Se você usar uma trapaça mais uma vez, vai invalidá-la. As trapaças não funcionam na dificuldade "Difícil", o que deixa a competição justa.
+~2_3
+Você deve ter reparado que as trapaças não funcionam. Confessamos, estávamos brincando com você. Na verdade, Berusky não tem trapaça nenhuma; seria questionável se tivesse. Mas imaginar que alguém acreditou nisso e ficou apertando as teclas furiosamente, xingando os autores do jogo, é bem divertido, talvez até maldoso.
+~2_4
+Como você mesmo viu, Berusky não é um jogo sério de jeito nenhum. Então tente não levá-lo a sério, não fique bravo à toa, não xingue os autores do jogo, mesmo que às vezes eles mereçam, e quando o jogo realmente te irritar, você pode se vingar: tire-o do disco rígido, passe para um disquete e depois jogue no lixo.
+~2_5
+É possível que você encontre um erro de gramática ou de digitação nos textos que acompanham Berusky. Embora os textos tenham sido revisados com cuidado, é impossível eliminar o risco por completo. Então, por favor, seja tolerante, e se encontrar qualquer discrepância, mande-nos um e-mail e faremos o possível para corrigir.
+~2_6
+A fase a seguir deve ser questão de poucos segundos para você. Em fases assim, é bom usar a tecla turbo "Shift" junto com as setas, que faz as joaninhas voarem pela tela como loucas, literalmente. E se você ainda tiver uma taxa de atualização de imagem alta, a velocidade aumenta ainda mais.
+~2_7
+Outra tecla interessante em Berusky é a letra "G". Ela salva a posição, e com a letra "V" você volta para ela quando as coisas dão errado. Isso serve para mostrar a alguém que você realmente chegou até aquele ponto da fase. Dá para usar essas teclas, é claro, em qualquer fase, até nas que forem criadas com o editor. Mais informações no "BERUSKY.TXT".
+~2_8
+Dê uma chance ao editor também. Ele não é muito amigável, mas dá para criar alguma coisa nele. Depois você pode nos mandar a sua criação, ficaremos muito felizes de jogar algo que não tenha sido criado pelas nossas garras. Quanto ao editor, as melhores funções ficam escondidas nas teclas de atalho; uma lista delas está, de novo, no conhecido arquivo "BERUSKY.TXT".
+~2_9
+Alguns de vocês podem classificar esta fase como "impossível de fazer". De fato, é o que parece no começo, mas depois de uma exploração detalhada você vai perceber que dá mesmo para chegar à saída. É um truque maldito e fácil de deixar passar, então preferimos avisar de antemão, para você não largar Berusky logo no início.
+~2_10
+Você já jogou Boovie? Se não, recomendamos muito. É um jogo de qualidade, com um monte de animações bonitas que você com certeza não vai ver aqui. Vimos só uma demo, mas até ela valeu a pena. Um minijogo brutal e gratuito, o Bloodie, com um cenário original e ótima jogabilidade, é ainda melhor que o Boovie; não deixe de conhecer, é um dos melhores freewares que existem.
+~2_11
+Você já bebeu cerveja? Nós não, mas dizem que vale a pena. Segundo consta, é melhor que Berusky e Boovie juntos. Por isso é preciso testá-la direito, o que aparentemente vai acontecer no batizado de Berusky que já está preparado. Se a cerveja corresponder às expectativas, vamos parar de fazer jogos e começar a fazer a "sopa da nação".
+~2_12
+Você sabia que um dos programadores de Berusky representa a República Tcheca no caratê? Bem, ele só tem faixa amarela e um quimono que era da avó, mas dizem que vai chegar ao campeonato regional daqui a um ano. Segundo ele, quando os jogos começarem a entediá-lo, ele vai viver de esporte, o que nós desaprovamos, já que bater nas pessoas por diversão e ainda receber por isso é barbárie.
+~2_13
+A fase à frente é bem trivial. O princípio é empurrar um barril de lixo radioativo até a saída para a próxima fase. Como há só uma joaninha nesta fase, ela precisa andar muito, principalmente se você a torturar com a tecla "Shift". Vale dizer que esta fase é a mais nova de todo o Berusky, foi criada cerca de quinze dias antes da data de lançamento.
+~2_14
+O QI de um macaco treinado comum, um chimpanzé, pode chegar a 85 ou mais. Alguns indivíduos até conseguem controlar vários aparelhos de escritório, inclusive um computador pessoal. Um golfinho talvez também conseguisse, quem sabe até melhor, mas o problema é que ele precisa de água e não tem mãos, só nadadeiras. O que significa que é melhor colocar um macaco num escritório do que um golfinho.
+~2_15
+A fase a seguir vai dar trabalho, pelo visto. Não que seja extremamente difícil, mas você pode sofrer de uma falta urgente de explosivos. Não deveríamos dar conselhos, mas uma dicazinha não faz mal. Então, tente conseguir o maior número possível de barris radioativos e use-os onde eles forem mais necessários.
+~2_16
+Ouça a banda de Plzen chamada Znouzectnost enquanto joga Berusky. Esta música é oficialmente recomendada por todos os beta-testers, não exige muito de quem escuta, tem letras extraordinárias e tem um impacto especialmente positivo no raciocínio, o que é bom na hora de jogar. Embora não condenemos a trilha sonora original de Berusky, ela também é boa para jogar.
+~2_17
+Há algumas pegadinhas na fase a seguir. Embora pareça fácil à primeira vista, você pode ficar preso nela por um tempo. Mas dá para passar sem problema. Para quem não tiver sorte, aqui vai mais uma dicazinha: pense com cuidado onde usar os dois barris radioativos.
+~2_18
+Surgiram situações interessantes com frequência durante a criação das fases. Como Berusky foi desenvolvido lentamente ao longo de cerca de dois anos, algumas fases foram esquecidas e, quando voltávamos a elas depois de muitos meses, o autor às vezes não conseguia resolvê-las de um jeito apropriado. Dá para ver alguns desses pedaços na dificuldade "Difícil".
+~2_19
+Então, esta fase definitivamente merece uma conversa. O visual não é grande coisa, chega a ser vergonhoso de tão fácil, mas o interessante é o princípio da solução. Se podemos dar um bom conselho: lembre-se muito bem dele, pois uma situação parecida aparece em quase todas as outras fases de Berusky, e é, na verdade, o enredo mais usado.
+~2_20
+Temos um enigma para você. Não parece muito lógico, mas tem solução. Você talvez já conheça, não fomos nós que inventamos, alguém nos contou. Então: dois elefantes sentam numa cerca. Que horas são? Parece esquisito, não é? Se você não resolver sozinho, não faz diferença nenhuma, você vai receber a resposta quando terminar a fase seguinte, de qualquer jeito.
+~2_21
+"É hora de trocar a cerca", essa é a solução completa do enigma anterior. Imaginamos que você esperava algo mais inteligente; mas esta é a única resposta correta para a pergunta "Que horas são quando dois elefantes sentam numa cerca?". Também preparamos mais dois enigmas intelectualmente exigentes, mas eles aparecem em dificuldades completamente diferentes.
+~2_22
+Mais morto é quem morre depois. Esta é uma velha frase universal, que não tem, porém, absolutamente nenhuma consequência. Mas a afirmação não pode ser negada. Pense: Jan Hus morreu em 1415 e Karel Capek em 1938. Isso significa que Jan Hus está morto há 523 anos a mais que Karel Capek! Com certeza dá para encontrar muitos exemplos parecidos na rica história do nosso povo.
+~2_23
+Esta fase parece muito tosca e, além disso, é muito caótica, e você vai ter muita dificuldade para encontrar as cinco chaves. É exatamente assim que fica quando os autores estão ficando sem fantasia. Nessas horas é melhor tirar um tempo, pensar em tudo com calma e voltar ao jogo; senão falta ideia, e é isso que dá fases assim.
+~2_24
+Algumas pessoas admiram a AnakreoN pela autocrítica extra, que supostamente só expressamos por meio de uma arrogância escondida. Não admira que seja uma tese interessante; porém, como acontece em casos parecidos, completamente sem sentido. Podemos nos permitir a autocrítica por vários motivos: ... Estou vendo que não cabe aqui, então contamos os motivos na próxima fase.
+~2_25
+Primeiro: fazemos freeware e, só por isso, não podemos afirmar que somos bons, que nossos jogos são os sucessos do momento e coisas do tipo. Segundo: somos movidos por retorno, embora admitamos que, se todos os e-mails dos testadores fossem do tipo "Vocês são uns perdedores, melhor desistirem!", provavelmente desistiríamos.
+~2_26
+Atualmente há um grande boom do sistema operacional Linux. No começo, pensamos em lançar Berusky para Linux também; chegou a estar escrito no nosso site, mas nunca fizemos. Surgiram outras preocupações, tínhamos muito a fazer para fazê-lo rodar no DOS, e esta é a nossa forma de pedir desculpas a todos que esperavam por isso.
+~2_27
+27 é considerado um número da sorte na numerologia. Tudo bem, já houve casos que contrariam essa superstição, como a execução de vinte e sete nobres tchecos, ou os primeiros 27 anos da Guerra dos Trinta Anos, mas esperamos que você passe pela vigésima sétima fase sem maiores problemas.
+~2_28
+Não se diz uma palavra sobre o número 28 na numerologia. Mas é um número muito ruim para programadores. Se você sabe alguma coisa sobre o bug do ano 2000, com certeza adivinha do que estamos falando. Mas Berusky vai passar pelo problema do ano 2000 porque testamos o programa a fundo, e podemos jurar que Berusky vai estar funcionando no temido 29 de fevereiro do terceiro milênio.
+~2_29
+A ciência já provou que pessoas nascidas em 29 de fevereiro morrem muito cedo, geralmente entre o décimo quinto e o vigésimo ano de vida. Esse fenômeno interessante ainda não foi explicado por ninguém, e é possível duvidar com sucesso de que algum dia será. A única defesa conhecida e muito eficaz é uma concepção pragmática, que todos os pais de primeira viagem deveriam ter em mente.
+~2_30
+A fase a seguir é muito trivial e ficaria melhor na dificuldade "Treino". Encare-a como um belo relaxamento antes da tempestade de fases extremamente difíceis que vem por aí. Você vai esperar um bom tempo por elas, mas, por outro lado, vale saber que Berusky não é moleza, como pode ter parecido até agora.
+~2_31
+O primeiro cão no espaço foi a Laika, e Yuri Gagarin foi depois dela. Há algumas especulações de que ele nunca voltou para a Terra e que por isso foi, na verdade, menos bem-sucedido que seu colega cachorro, mas não há provas. Nós, da AnakreoN, acreditamos que Yuri voltou e morreu naquele avião civil, como dizem.
+~2_32
+Mais uma fase terrivelmente fácil. Se você não gostar mais dela, escolha uma dificuldade maior, sempre dá para voltar aqui, é para isso que servem as senhas do Berusky original. Elas não são lá muito inteligentes, graças ao nosso projetista, que escreveu o gerador de senhas aleatórias embora não saiba programar nada.
+~2_33
+Um estudo recente sobre a malignidade dos jogos, ou sobre o impacto negativo deles na psique das crianças, confirma plenamente os temores dos cientistas. Sim, jogar, principalmente jogos de ação, estratégia e lógica, afeta seriamente a psique das crianças, prejudicando a criatividade natural delas. Atenção, pais: seus filhos por acaso têm o TFS ou Berusky nos computadores deles?
+~2_34
+Você já pensou em como serão os jogos no ano 2052? Pense, há 20 anos entre o Tetris e o Quake, e até onde os jogos chegaram nesse meio-tempo? Nos próximos 20 anos, por exemplo, o Unreal será só um artefato técnico do começo do milênio. É engraçado como o mundo dos jogos é tão cheio de efemeridade.
+~2_35
+Há pouco estávamos polemizando sobre o futuro dos jogos, os jogos da segunda metade do século 21. Quem sabe se nossas previsões estão certas, mas já podemos dizer com certeza como os jogos do futuro não serão: definitivamente, não serão como Berusky, Manic Miner ou similares.
+~2_36
+Um belo visual muitas vezes melhora uma ideia que não é lá muito esperta. A fase que você vai ver agora é prova direta disso. Porém, se não há nem ideia nem habilidade do projetista, o que sai não é jogável nem olhável. Felizmente, não incluímos fases assim em Berusky, ou então não estamos cientes disso.
+~2_37
+Certa vez consideramos uma tradução para outro idioma. Eslovaco e polonês estavam nos planos, mas desistimos porque não sabíamos falar polonês e tínhamos buracos enormes no nosso eslovaco, por exemplo, não sabíamos como traduzir o próprio título, o que era uma deficiência realmente grande. Excluímos o inglês logo no começo, estava completamente além das nossas habilidades de tradução.
+~2_38
+A fase a seguir tem uma história muito interessante. Ela serviu de teste por mais de um ano, e nela foram testados novos recursos do jogo e o funcionamento geral. Depois foi a fase inicial de algumas versões beta de Berusky, usada principalmente para fins internos. Por fim, nós a apagamos por acidente, recuperamos, modificamos e incluímos na dificuldade "Fácil".
+~2_39
+Você já pensou em como seria o mundo sem computadores? Para alguns é uma ideia terrível, outros iriam gostar porque computadores só complicam a vida deles, ou nem ligam. Mas nós ligaríamos; se não houvesse computadores, teríamos que lançar Berusky como jogo de tabuleiro.
+~2_40
+À primeira vista, esta fase pode parecer difícil, mas não é o caso. Às vezes é o contrário: a pessoa dá uma olhada, diz "sem problema, dois minutinhos", e passa meia hora nela, o que pode acontecer na última fase da dificuldade "Difícil".
+~2_41
+Para crianças: essa é uma descrição curta da fase à sua frente. Empurrar um barril radioativo por um labirinto é o assunto de sempre dos projetistas de fases. Aqui você também pode usar plenamente as habilidades dos cinco amigos insetos, o que deixa o enredo muito mais fácil.
+~2_42
+Berusky deveria ter contido originalmente também um modo de jogo de arcade especial, em que você lutaria contra outro jogador ou contra o computador, representado por pulgões, formigas, necróforos, besouros-da-casca e besouros-da-batata, usando as armas padrão de Berusky. Mas mudamos de ideia, porque o jogo perderia sua essência natural. Talvez na próxima.
+~2_43
+Esta fase é peculiar porque leva apenas 36 passos para ser concluída, o que não deveria tomar mais de 15 segundos de um jogador experiente, mesmo sem apertar a tecla "Shift". Há duas maneiras de terminar esta fase, e uma delas leva mais passos. Você acha que consegue encontrar as duas? Ou vai se contentar com um final trivial?
+~2_44
+Mais uma fase fácil. Basta pensar em como entrar em um dos montes de lixo radioativo e você ganha. Como são quatro montes, você vai ter que planejar quatro vezes. Você deve estar achando que valeria a pena ter um pouco mais de chances de carregar a posição, mas aí ainda seria um jogo de lógica?
+~2_45
+Você com certeza conhece esta fase da demo de Berusky, se teve a chance de vê-la. Ela não é exatamente igual ao modelo original, mas o princípio foi mantido. É interessante que esta fase relativamente fácil seja considerada um osso duro de roer. Por que será? Quem sabe. De todo modo, confira você mesmo.
+~2_46
+Do ponto de vista científico, a joaninha (Anatis Ocellata) é um inseto alado da subfamília dos besouros. Em outras palavras, é uma criatura de seis patas com uma cabeça horrível, duas antenas e um estojo de asas colorido com pintas pretas. Comparada com o porco, a joaninha tem um cérebro menor; comparada com a vaca, tem um trato digestivo menor. Ela cresce até um centímetro e pouco.
+~2_47
+Do ponto de vista do jogo, este besouro é bem simpático, até sociável, e obedece a você, sabe empurrar caixas, quebrar pedras com uma picareta, destrancar a porta e nem tem medo de lixo radioativo se for preciso. Este besouro é, em geral, um animal muito talentoso, destinado a certas atividades.
+~2_48
+Os pulgões são os maiores inimigos das joaninhas. As joaninhas os odeiam tanto que os matam e os comem; por isso são consideradas insetos benéficos. Os pulgões, que muitas vezes cooperam com as formigas, têm uma opinião bem diferente sobre isso; deixam claro pelo comportamento que duvidam dessa utilidade.
+~2_49
+A penúltima fase da dificuldade "Fácil" não parece nada fácil, mas isso é só ilusão. Depois que você der uma olhada ao redor, vai descobrir que não há alegoria nenhuma ali. Tudo de que você precisa são cinco picaretas... Hmmm, provavelmente revelamos algo que não deveríamos. Deixa pra lá, encare como uma dica.
+~2_50
+Chegamos lá. A última fase, a 50ª desta dificuldade, é a única coisa entre você e um final bem-sucedido do segundo episódio da saga de Berusky, se é que podemos chamá-la assim. Quando você vir a sequência final do episódio, pode decidir se vai tentar outro episódio, mais difícil, ou não.
+~3_1
+Bem-vindo à primeira fase da dificuldade "Média". Ao contrário do costume, desta vez vamos começar mais do que ferozmente. Usando apenas duas joaninhas, você vai precisar passar por uma fase em que seriam necessários pelo menos três amigos joaninhas. Duas joaninhas também conseguem muito, mas vão ter que pensar demais para chegar a uma solução aceitável.
+~3_2
+Quem jogou a primeira versão demo de Berusky com certeza se lembra desta fase. Ela torturou muita gente, e dizem até que alguns a consideram impossível de resolver. Embora não seja nada muito complexo. Basta pegar cinco chaves, empurrar uma caixa de vez em quando, quebrar uma pedra ou duas, e pronto. Na verdade é a mesma coisa de novo e de novo, mas mesmo assim continua dando problema.
+~3_3
+Aqui está outra coisa interessante do mundo. Você provavelmente sabe o que é um tsunami: ondas oceânicas gigantescas causadas por um terremoto submarino. Elas causam enormes danos materiais e mortalidade em países asiáticos todo ano. Normalmente têm alguns metros de altura; porém, no começo deste século, um explorador russo viu uma onda com mais de 600 metros de altura. Uau!
+~3_4
+Sujeira. Provavelmente a primeira palavra que vai passar pela sua cabeça quando você vir a fase a seguir. Mas, antes que você nos processe por ofensa moral, queremos avisar que esta fase não foi criada pelo nosso projetista, e sim por um homem chamado Hacker Chris, que nos disse que nada de ruim aconteceria com o nosso servidor web se publicássemos a fase. O que você teria feito se estivesse no nosso lugar?
+~3_5
+Olhando para a fase a seguir, é difícil para nós ficarmos de boca fechada. Gostaríamos muito de dar uma dica de novo, mas não podemos, porque sem querer entregaríamos a solução completa. Querendo ou não, você vai ter que descobrir sozinho de novo. Mas não fique triste; quando for realmente necessário, você com certeza vai receber um bom conselho. Não vamos decepcionar você, pode confiar.
+~3_6
+Um físico de uma faculdade australiana provou que um mais um não é dois, mas, novamente, apenas um. Com um experimento com duas gotas de mercúrio que se juntam, ele convenceu todo o auditório de que era necessária uma mudança na educação do primeiro ano. Essa descoberta científica levanta, porém, uma pergunta dura: como isso vai afetar os jogadores de Berusky? Hmmm... provavelmente de nenhuma maneira.
+~3_7
+Este tipo de fase é relativamente muito popular. Na verdade, é um conjunto de cinco pequenas fases separadas, e cada uma delas deve ser resolvida usando apenas uma joaninha. Se você cometer qualquer erro, troque para outra joaninha e tente outra tarefa lógica; você sempre pode voltar à anterior depois de reiniciar a fase. Que simples...
+~3_8
+Uma pequena curiosidade do mundo. O famoso processador de 8 bits Z80, da ZILOG, cuja arquitetura foi usada pelo não menos famoso computador ZX-Spectrum, hoje é usado com sucesso pela Adaptec, que o instala como circuito de apoio nos seus controladores SCSI. Agora a pergunta é: para o pai do ZX-Spectrum, Sir Sinclair, isso é motivo de orgulho ou de choro?
+~3_9
+Além dos arqueólogos, os numerólogos também se voltaram recentemente para a Pirâmide de Quéops. As dimensões da pirâmide lhes fornecem informações inimagináveis que podem ser vantajosas. Você sabe, por exemplo, que se somar a altura da base mais alta da pirâmide com a área da base, calcular o quadrado do resultado e multiplicar tudo por zero, você obtém o ano em que Cristo nasceu?
+~3_10
+Não vai ser fácil não se perder nesta fase. Ainda bem que desta vez há muitos caminhos até o fim, o que é incomum, mas vai simplificar a situação, que já não é nada invejável. E se você estiver procurando a saída sem sucesso, lembre-se de que o olho no canto superior direi... Não, não, não. Isso seria dica demais. Procure e você vai encontrar.
+~3_11
+Se você está entediado com todos esses jogos 3D supermodernos e com saudade dos jogos que eram clássicos, recomendamos de todo o coração um dos muitos emuladores de console. Um dos mais conhecidos e melhores é o "MAME". Lá você vai encontrar as peças favoritas de todos os tempos. Dá para baixá-lo pela Internet, mas deliberadamente não divulgamos o endereço para evitar propaganda.
+~3_12
+Em tom mais sério, você com certeza conhece E. A. Poe, o controverso escritor do começo do século. Ele escreveu principalmente contos, dos quais o mais conhecido talvez seja "O Poço e o Pêndulo", ou a história de detetive "Os Assassinatos da Rua Morgue". Surpreendentemente, esse escritor meio louco foi também um grande poeta, o que não é muito conhecido. Quando você terminar de jogar Berusky, tente perguntar pelas obras dele numa biblioteca. Você não vai se decepcionar.
+~3_13
+Bem-vindo à armadilha da décima terceira fase, a infeliz. Quando dizemos "infeliz", queremos dizer que ela pode realmente fazer você chorar. É possível que, depois de mil passos, bem antes do fim, você descubra que o barril que acabou de usar para destruir o tonel de madeira aparentemente tinha outra finalidade. Olhe antes de pular.
+~3_14
+Outra fase que veio à luz nas plataformas de oito bits. É mediana tanto em complexidade quanto em visual. A única coisa interessante que pode chamar a atenção do jogador é o fato de não haver explosivos aqui. A verdade é que esse elemento importante do jogo ainda não tinha sido inventado naquela época.
+~3_15
+Supomos que seja hora de mais um belo enigma para os jogadores relaxarem. Por acaso temos um para essa situação, e parece que já passou da hora de usá-lo. Então: "Você sabe por que os mendigos carregam um celular o tempo todo e em todo lugar?" Para quem não é de cidade grande, "mendigo" aqui é a gíria para um vagabundo sem-teto.
+~3_16
+A resposta correta do último enigma, "Por que os mendigos carregam celulares?", é: "Porque é praticamente impossível pegá-los em casa." Na verdade nunca vimos um mendigo com celular, mas achamos o enigma razoável, de qualquer jeito. É claro que não ousaríamos incomodar você com enigmas ilógicos.
+~3_17
+Talvez toda equipe de autores de jogos tenha um ídolo do qual gostaria de se aproximar, alcançar suas qualidades e, claro, também seus ganhos financeiros. Muita gente adoraria alcançar o sucesso da ID-Soft, ou a popularidade da Westwood. Nós, como equipe de freeware, nos espelhamos em Huckleberry Finn, de quem estamos atualmente financeiramente muito próximos.
+~3_18
+A fase a seguir foi feita para funcionar como um estereograma. Tire os óculos, se estiver usando, cole os olhos na tela e comece a se afastar dela com os olhos meio fechados, até ficar a uns vinte e cinco centímetros da tela. Nessa posição, você deve ver contornos relativamente nítidos de um sinal que esconde um tom propagandístico.
+~3_19
+Há poucas animações no próprio Berusky. Além do tremelique das perninhas das joaninhas, também dá para ver uma explosão, ou o lento desmoronamento de uma rocha cheia de crosta sob as marteladas de um martelo pneumático; e é mais ou menos só isso que há para ver aqui. A fase a seguir tenta compensar essa grave deficiência pelo menos em parte, embora muito mal.
+~3_20
+Era uma vez, num 8 bits, uma demo brutal que fez muito sucesso. O nome dela era, por coincidência, "Ladybug". Era mais ou menos assim: uma joaninha andava pela palma da mão de um homem. E o homem disse: "Cante, joaninha." A joaninha respirou fundo e começou: "Lá lá, lá lá lá, tra lá lá." E o homem ficou tão feliz de ter uma joaninha cantora que a aplaudiu na hora...
+~3_21
+Se você acha que duas joaninhas da mesma cor não podem aparecer numa fase, claro que está enganado. Essa situação não é excepcional, mas, por outro lado, é bem rara. Nesse caso só uma joaninha pode se mover, as outras estão apenas se fingindo de mortas, o que pode ser entendido literalmente.
+~3_22
+Antes de começar a jogar, pense com cuidado em quantas joaninhas você realmente vai precisar para vencer o desafio. Uma joaninha aparentemente emparedada e inútil pode ser muito útil em certas situações. Aí o enredo inteiro pode mudar de uma simples tentativa de conquistar uma chave para uma tentativa desesperada de libertar um besouro aprisionado. Mas isso provavelmente já foi conselho demais...
+~3_23
+Supomos que a fase anterior foi bem desafiadora, embora tenhamos ajudado você bastante. Bem, as dicas não são uma coisa ruim, na verdade deveriam fazer parte de toda fase, talvez exceto as muito fáceis. Porém, não é tão simples. Escrever uma boa dica muitas vezes é bem mais difícil do que criar uma fase. É por isso que somos tão econômicos com elas em Berusky...
+~3_24
+" WWW.FEE.VUTBR.CZ/*GREBENIC/ORIGAMI/ " não é um link para o filho do líder do Partido Comunista da Boêmia e Morávia, mas para o melhor site tcheco sobre uma antiga arte japonesa: o ORIGAMI. Origami é a arte de dobrar papel, geralmente uma folha quadrada, e se brinca com ela há séculos. Você também pode tentar; é divertido e é exercício mental.
+~3_25
+Você pode ter reparado num caractere estranho no endereço da Internet do último texto. Algo que parecia uma estrela. Essa deficiência foi causada por um dos desenvolvedores de Berusky, que deixou para trás um caractere aparentemente insignificante ao compilar a fonte: o traço ondulado, também conhecido como til. Para contornar isso, trocamos o símbolo original por um caractere substituto.
+~3_26
+Se você sabe desenhar pelo menos um pouquinho, é de Brno e gostaria de contribuir com jogos de computador, pode tentar entrar em contato conosco. Você não precisa ser um pintor extraordinário, só precisa gostar e estar disposto a levar algo até o fim. Também nos interessam pintores medianos, ou, na verdade, só eles, já que não podemos contratar profissionais.
+~3_27
+Algumas pessoas acham que Berusky lucra com a antiga fama do Sokoban, também chamado de "guarda do armazém". Essa suposição não está exatamente correta; porém, temos que admitir que algumas das nossas ideias foram indiretamente inspiradas pelo Sokoban. Mas não achamos isso nada ruim. Isso não afetou a jogabilidade de Berusky; pelo contrário, melhorou muito, então qual é o problema?
+~3_28
+Uma fase caótica à primeira vista pode logo ficar clara, o que se pode dizer principalmente da fase vinte e oito. Se você a examinar a fundo, vai descobrir que as joaninhas ocupam pequenos territórios da fase, hermeticamente isolados do mundo exterior. As joaninhas não têm consciência umas das outras, o que implica que cada joaninha tem que se virar sozinha.
+~3_29
+Você já desejou quebrar a posição inabalável do dólar americano em Wall Street? Se sim, este é o lugar certo. Não podemos providenciar uma quebra da bolsa, mas a quebra imaginada da moeda é possível. Não, não estamos sonhando acordados; jogue esta fase e você vai ver por si mesmo do que estávamos falando de forma tão cansativa.
+~3_30
+Se você acha que Berusky é um jogo infantil, não vamos contestar a sua opinião; mas temos que acrescentar que a ideia fatídica do inseto nasceu de puro aperto. Quando ainda não tínhamos designers gráficos capazes, os personagenzinhos eram desenhados pelo nosso roteirista, que não conseguia criar nada que prestasse. E, de todas as coisas horríveis que ele produziu, uma mansa joaninha foi a mais bonita e acabou ficando no jogo.
+~3_31
+Há três tipos de jogadores de jogos de lógica. Os do primeiro tipo jogam pela alegria do espírito, os do segundo para se assegurar do seu intelecto excepcional, e os do terceiro têm que jogar, contra a vontade, porque testam os jogos, como seus criadores. Passamos pelos três estágios, mas podemos afirmar com segurança agora que o melhor prazer de jogar só se experimenta quando você joga pela alegria do espírito.
+~3_32
+A maior e também a única recompensa que podemos receber por Berusky é a calorosa palavra de apreço de algum jogador. A crítica anima menos, o insulto menos ainda, mas a vida é assim, de qualquer forma. Então não seja tímido; se quiser nos dizer qualquer coisa, é só escrever. Gostamos de ler cartas, e algumas delas respondemos com prazer. Nosso endereço de e-mail está nos Créditos.
+~3_33
+Se houvesse mais joaninhas nesta fase, ela poderia estar com sucesso entre as mais fáceis; mas assim, quando você precisa se virar com uma só, não só vai ter que pensar mais, como também vai ter que correr mais. Nossos beta-testes mostraram que é preciso dar mais de novecentos passos para passar pela porta rumo à próxima fase! Mesmo não sendo uma fase grande de jeito nenhum.
+~3_34
+A penúltima fase é, comparada com as trinta e três anteriores, extremamente fácil. Segundo certos membros da equipe sem crédito, é até muito mais fácil que a última fase da dificuldade "Treino", o que é bem possível. Esta fase é tematicamente dividida em duas unidades lógicas; chamei a da esquerda de "Amantes Sem Pernas", e a da direita de "Gatinho Sentado". Ou será o contrário?
+~3_35
+Estamos nos despedindo da dificuldade "Média" com esta fase. Claro que não é o fim do jogo em si, há outras dificuldades, e se todas elas fossem moleza, você também pode tentar criar uma nova super difícil e nos mandar pela Internet; nós vamos jogá-la e, se gostarmos, vamos colocá-la no nosso site junto com o seu nome.
+~4_1
+Bem-vindo à primeira fase da dificuldade "Difícil". Ela mostra de cara que não é nada fácil, embora o fato de você poder escolher entre oito chaves facilite um pouco a situação. Mesmo assim, acho que vai ser um começo bem desafiador. Só não desista logo no início; se uma abordagem não der certo, outra, mais complicada, dará.
+~4_2
+Quando você der uma olhada na fase a seguir, vai se perguntar por que a colocamos aqui. Depois de jogar um pouco, segundo nossas suposições, isso será respondido pelos alguns minutos que você vai passar explorando os princípios dos mecanismos lógicos correlativos em que esta fase se baseia. Porém, quando encontrar a solução, vai se perguntar por que ela não passou pela sua cabeça antes.
+~4_3
+Estamos realmente curiosos para ver como você vai resolver o desafio a seguir. Principalmente quem participou do concurso de Berusky deve tomar cuidado para não dar passos demais, o que aqui é muito fácil de acontecer. Nesta fase também, uma solução mais complicada está correta, mas exige mais passos...
+~4_4
+Algo mais fácil de desentortar viria bem a calhar, não é? Certo. A dificuldade "Difícil" em si não significa que cada fase deva torturar você por muitos minutos ou até horas. Às vezes é preciso parar, descansar e só então se lançar a novas e desafiadoras tarefas, que contêm novas armadilhas e ciladas.
+~4_5
+Há uma armadilha maldosa nesta fase. Talvez você a perceba logo, talvez não. A segunda opção pode ser fatal para você, porque aí você vai ficar tentando encontrar uma solução com sentido, sem sucesso. Então temos uma dicazinha para você. Se você lembrar da fase número nove da dificuldade "Fácil", suas chances de encontrar uma solução em alguns minutos são bem altas.
+~4_6
+Às vezes parece muito importante não ultrapassar os limites do bom gosto. Por exemplo, um homem mandou tocar "Don't Worry, Be Happy" no funeral da esposa. As pessoas tiveram dificuldade para esconder o sorriso, divertidas com a letra comovente do mestre do reggae. Que cinismo. Felizmente isso não pode acontecer com você em Berusky.
+~4_7
+Esta é uma das fases mais antigas. Eu a criei quando tinha uns doze anos, num computador Spectrum de oito bits do Sir Marles Sinclair. A fase é muito caótica, vai ser difícil vocês se orientarem, embora o enredo não seja nada esperto. Bem, o que se poderia esperar do cérebro de um garoto de doze anos sem talento...
+~4_8
+Não leve o aviso "FÁCIL" muito a sério, é ironia, mais do que uma descrição. Uma fase clara à primeira vista e com um objetivo aparentemente claro provavelmente vai trazer muita surpresa com situações das quais não há volta, a não ser reiniciando. E outra lição aprendida é: nunca julgue coisas e pessoas pela aparência; foque no que há por dentro e na profundidade delas.
+~4_9
+Sem dúvida uma das fases mais difíceis de todos os tempos, pelo menos é assim que a percebemos. Como as duas fases anteriores, esta vem da época em que os computadores de oito bits dominavam o mundo dos jogos. Porém, isso foi há muito, muito tempo, muita gente nem acredita. Mesmo assim, foi a era de ouro dos computadores. Tudo estava na infância, não faltava novidade, quem não viveu isso não entende.
+~4_10
+Porém, vamos parar com a nostalgia; de qualquer forma, ela não é nada contemporânea. O fato de a arquitetura de oito bits estar fora de uso há muito tempo pode ser provado pelo fato de o computador Sinclair ter sido apresentado como um modelo histórico da pré-história da informática numa feira de TI recente. Mesmo assim, ele vendeu bem há apenas cinco anos.
+~4_11
+Você sabia que a rede mundial Internet foi fundada a partir do projeto militar Arpanet? É verdade. Aliás, muitas coisas da antiga Arpanet ainda permanecem! Por exemplo, em "WWW.OWLET.COM" dá para encontrar um dos mais antigos scripts CGI de todos os tempos, o "BXTACK.CGI", cuja finalidade é guiar mísseis balísticos de médio alcance.
+~4_12
+A maioria das pessoas acha que o asselo é aquele besouro simpático de estojos vermelhos, milhares dos quais se veem todo verão. Infelizmente isso não é verdade, pois esse bicho é, na verdade, um pequeno crustáceo de água doce, de até um centímetro e pouco. É sério, não estamos inventando; basta olhar numa enciclopédia.
+~4_13
+Um fato interessante sobre esta fase é que indivíduos incautos podem bloquear sem querer um caminho que talvez queiram usar de novo mais tarde. Embora não haja porta de uma passagem só aqui, o desenho desta fase permite essa situação. Isso pode ser especialmente irritante pouco antes do fim; dá vontade de tirar o teclado da mesa e bater com ele na cabeça de alguém.
+~4_14
+Outra fase muito caótica. A maioria dos jogadores odeia esse tipo de enigma do fundo do coração, pois, em vez de lidar com problemas lógicos de verdade, primeiro têm que encontrar as joaninhas na selva de elementos, depois as chaves junto com a saída, e só então podem pensar em qual caixa mover, ou quantas picaretas serão necessárias para o monte tremendo de pedras.
+~4_15
+Muitas fases têm uma solução clara logo no começo, que é, porém, bem difícil de executar de fato. Bem, esta é exatamente o oposto disso: você vai conseguir mover ou levar qualquer coisa a qualquer lugar, mas será inútil, porque não vai ter ideia de como chegar naquela maldita saída. E então você vai ver a luz...
+~4_16
+Segundo as estatísticas, morrem por ano duas vezes mais pessoas por picada de abelha do que por ataque de tubarão. Isso foi publicado na edição de junho de 1972 da Sea Torture. O autor do artigo foi o cineasta submarino Joe Pumblechook. É paradoxal que ele, o pioneiro desse estudo inovador, tenha morrido filmando uma moreia verde sob os dentes de um tubarão azul.
+~4_17
+Como prometido, aqui vai mais um enigma: é grande, verde, peludo, está numa árvore e, quando cai da árvore, mata você; o que é? Admitimos que este enigma é um pouco mais complicado que o último; por outro lado, combina totalmente com a dificuldade que você está jogando. Como de costume, você vai receber a resposta quando vencer esta fase.
+~4_18
+Uma mesa de bilhar. É grande, verde, tem camurça peluda em cima e é tão pesada que pode matar você se cair em cima de você de uma altura. Claro que o enigma não é novidade; vimos isso em algum lugar na Internet. Se você consegue pensar em qualquer outra coisa que possa ser grande, peluda e matar sob certas condições, avise-nos e amplie nossos horizontes.
+~4_19
+Berusky está chegando ao fim, devagar mas com certeza. Esperamos que os momentos que você passou com ele não tenham sido perda de tempo, e que você passe pelas duas fases restantes sem problemas para dar seguimento ao seu esforço. Boa sorte!
+~4_20
+A última fase jogável das aventuras das joaninhas. Como de costume, a última fase também é a mais difícil (a melhor). Depois que a fase for concluída, acontecerá a quarta e última parabenização, em que os autores vão mostrar seu respeito pelas suas habilidades intelectuais. E se você estiver se sentindo o irmãozinho do Albert Einstein agora, tente resolver também as cinco fases da dificuldade "Impossível"...
+~5_1
+A AnakreoN vai dar um computador novo, com Pentium III Xeon e placa de vídeo 3Dlabs Oxygen GMX, aos jogadores que conseguirem completar a fase a seguir, independentemente do número de passos dados ou do tempo gasto. E ainda vamos acrescentar um monitor de 24" se você conseguir em 147 passos. Então, divirta-se! Quebre a cabeça e a recompensa será sua.
+~5_2
+Eu realmente espero que você tenha trapaceado para chegar aqui, ou seja: alguém te passou a senha, você sabe hackear um pouco, ou já tem o código-fonte. Se não, você é um gênio, e só esperamos que já seja 2036 e que um Xeon possa ser comprado usado por uns trocados. A fase que está à sua frente agora é bem parecida com a anterior.
+~5_3
+Você sabe por que incluímos a dificuldade "Impossível" em Berusky? Alguns de vocês podem pensar que não tínhamos motivo especial, mas não é verdade. Ela tem, sim, um motivo pragmático. Resumindo: queríamos evitar animações finais trabalhosas, que, segundo um padrão europeu, devem encerrar todo jogo de computador decente. Bem, e um jogo impossível de terminar não precisa de encerramento...
+~5_4
+Se você conseguir terminar alguma das fases desta dificuldade, mesmo assim, por favor mande-nos o roteiro por e-mail; estamos realmente interessados nisso. Dizemos isso porque muita gente nos disse que completou todas as fases e que foi bem fácil. Então ou são grandes mentirosos, ou cometemos um grande erro em algum lugar.
+~5_5
+Então, esta é a 120ª e última fase de Berusky. Parabéns pela conclusão bem-sucedida; esperamos que você tenha gostado do jogo. Se sim, certamente começaremos a trabalhar no "#2"; porém, ele vai rodar no Windows, exclusivamente em 3D, do ponto de vista do jogador, e vai custar cerca de quarenta dólares. Divirta-se, e até outro projeto...
+~fim_1
+Se você acha que vem aí uma felicitação, elogiando o seu gênio, está bem enganado. O fato é que você ainda não fez nada de verdade. O "Treino" também fica fácil para um bicho mais esperto depois de um tempo, o que nos faz pensar que uma felicitação não seria apropriada. Alguns de vocês poderiam encarar isso como ironia ou até insulto ou zombaria.
+
+Pense bem, nós valorizamos vocês, jogadores, e não gostaríamos de ofender ninguém com uma felicitação imprópria logo no começo. Quando não podemos parabenizar, deveríamos pelo menos elogiar, mas não há nada pelo que elogiar.
+
+Você com certeza deu um monte de passos inúteis enquanto jogava, repetiu a última fase pelo menos uma vez, vivia olhando a ajuda... Na verdade deveríamos repreender você. Sim, repreender, é essa a palavra. É preciso perceber a própria incapacidade logo no começo, a recusa em pensar e, de fato, todas as próprias características negativas. É preciso sentir vergonha e jurar que vai progredir, que vai se esforçar mais, ser mais rápido, e fazer o melhor para dar um desempenho que valha a pena, e não repetir o fracasso anterior.
+~fim_2
+Com certeza o episódio mais longo de Berusky acabou agora. O termo "o mais longo" não significa necessariamente "o mais difícil", como você provavelmente vai descobrir logo. De qualquer forma, passar cinquenta fases, ainda que simples, é um belo trabalho digno de elogio, que você merece.
+~fim_3
+Temos que admitir que você é realmente melhor do que supúnhamos. Parece que nem a dificuldade "Média" lhe causou problemas, senão você mal conseguiria ler estas linhas. De qualquer forma, você merece uma palavra de elogio, sem dúvida nenhuma.
+~fim_4
+Este é o fim de Berusky. Você venceu as vinte fases mais difíceis e traiçoeiras, o que significa que não há mais nada com que Berusky possa surpreendê-lo.
+
+Por favor, aceite nossos sinceros parabéns, com os tons comoventes da melodia da vitória... (As últimas palavras se aplicam apenas a quem tem placa de som.)
+
+Obrigado pelo tempo que você dedicou ao nosso jogo, e lembre-se de que, embora Berusky não pareça, passamos muitas noites em claro com ele, procurando erros dinâmicos desagradáveis por horas infindáveis, ou tentando implementar melhorias que não estavam planejadas. De todo modo, achamos que o esforço valeu a pena. Não criamos nada excepcional, mas esperamos que Berusky possa ser interessante para um pequeno grupo de fãs, que sempre ficam felizes em jogá-lo, ou que compartilham uma fase de usuário bem-feita.
+
+No fim, gostaríamos de agradecer a todos que contribuíram ou tiveram uma ideia interessante ou simplesmente relataram um bug grave. Você pode ver a lista dos colaboradores mais importantes na seção "Autores" da ajuda.
+
+E é isso por hoje.
+
+Se um dia no futuro
+formos atacados
+por uma traiçoeira libido criativa,
+com certeza cometeremos
+um jogo,
+mas isso já é
+mais ou menos
+outra
+história...
+~fim_5
+Hmmm...
+
+É difícil dizer neste momento se seria bom classificar você como um bom jogador. Você certamente é um bom hacker, já que chegou até aqui.
+
+Por outro lado, não é um grande problema hackear Berusky. Depois que os arquivos "EXE" e "DAT" são descomprimidos, o caminho do hacking está livre. Vocês, hackers, sempre foram um grupo bem especial de usuários de computador. O que faz vocês hackearem programas alheios, redes de computadores e sabe-se lá o que mais? Com certeza vocês têm um motivo, senão certamente não fariam isso.
+
+Pessoalmente não temos briga com hackers, desde que eles não tenham briga conosco. Podemos até dizer que admiramos vocês um pouco. Não todos, claro, mas aqueles bons, que hackeiam por diversão ou para testar suas habilidades de computador.
+
+E, como você de fato chegou até este ponto, merece um prêmio.
+
+A música que você deveria ouvir ao fundo não se encontra no jogo. (Se você crackeou a versão curta de Berusky, também não vai ouvi-la aqui.) Ela foi composta pelo nosso músico especialmente para pessoas curiosas e espertas, que não se conformam com uma mera forma padrão de terminar um jogo, o que significa que foi feita só para você...
+~

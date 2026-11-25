@@ -301,6 +301,245 @@
           }
         }
       }
+    },
+    "/api/fases/{grupo}/{numero}/conclusao": {
+      "post": {
+        "summary": "Confere a vitória: a API refaz as jogadas com o mesmo motor e devolve a senha da próxima fase",
+        "tags": [
+          "fases"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "jogadas": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 50000,
+                    "pattern": "^[UDLR1-5GV]+$"
+                  }
+                },
+                "required": [
+                  "jogadas"
+                ]
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "treino",
+                "facil",
+                "intermediario",
+                "avancado",
+                "impossivel"
+              ]
+            },
+            "in": "path",
+            "name": "grupo",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 99
+            },
+            "in": "path",
+            "name": "numero",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "passos": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    },
+                    "proxima": {
+                      "nullable": true,
+                      "type": "object",
+                      "properties": {
+                        "grupo": {
+                          "type": "string",
+                          "enum": [
+                            "treino",
+                            "facil",
+                            "intermediario",
+                            "avancado",
+                            "impossivel"
+                          ]
+                        },
+                        "numero": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "exclusiveMinimum": true,
+                          "maximum": 9007199254740991
+                        },
+                        "senha": {
+                          "type": "string",
+                          "pattern": "^[a-z]{5}$"
+                        }
+                      },
+                      "required": [
+                        "grupo",
+                        "numero",
+                        "senha"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "textoDoFim": {
+                      "nullable": true,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "passos",
+                    "proxima",
+                    "textoDoFim"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "erro": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "erro"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "erro": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "erro"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/senhas": {
+      "post": {
+        "summary": "A fase de uma senha de cinco letras (as senhas do original)",
+        "tags": [
+          "fases"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "senha": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z]{5}$"
+                  }
+                },
+                "required": [
+                  "senha"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "grupo": {
+                      "type": "string",
+                      "enum": [
+                        "treino",
+                        "facil",
+                        "intermediario",
+                        "avancado",
+                        "impossivel"
+                      ]
+                    },
+                    "numero": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "exclusiveMinimum": true,
+                      "maximum": 9007199254740991
+                    }
+                  },
+                  "required": [
+                    "grupo",
+                    "numero"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "erro": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "erro"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

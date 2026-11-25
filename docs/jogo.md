@@ -12,8 +12,14 @@
 - O resolvedor (`pnpm --filter @projeto/api resolver`) achou a solução do treino 1 (94 jogadas), gravada em
   `apps/api/test/fixtures/solucoes.json`; um teste confere que ela vence a fase. As outras fases de treino têm vários
   besouros e passam do limite da busca simples.
-- O visual novo está no `/guia-de-estilo`, esperando aprovação (`docs/visual.md`).
-- Ainda não existe: a tela da partida, a conclusão (com a senha da próxima) e a tradução das dicas.
+- O visual novo foi aprovado em 25/11/2026 (`docs/visual.md`).
+- A partida funciona em `/fases/{grupo}/{numero}`: o teclado, o direcional e o deslizar no celular, a câmera que segue
+  a joaninha, guardar e voltar, recomeçar (com confirmação), a dica, a ajuda e a pausa. Ao vencer, a página manda as
+  jogadas para `POST /api/fases/{grupo}/{numero}/conclusao`, e a API confere com o motor e devolve a senha da próxima.
+- O progresso fica no navegador (`localStorage`): a fase seguinte abre com a vitória, e a fase fechada pede a anterior
+  ou a senha (`POST /api/senhas` já existe; a tela da senha ainda não).
+- As 120 dicas e os 5 textos de fim estão traduzidos (`apps/api/dados/dicas.pt.txt`).
+- Ainda não existe: o mapa de fases (`/fases`), a página "Como jogar" e a tela da senha.
 
 ## As fases do original
 
@@ -50,6 +56,19 @@
 | Trocar de besouro                             | `level_game::player_switch`                                     | trocar de besouro                             |
 | Guardar, voltar e recomeçar                   | `level_active::level_save/level_load`, `berusky::level_restart` | guardar, voltar e recomeçar                   |
 
+## A tela da partida
+
+- **A página** (`apps/web/app/pages/fases/[grupo]/[numero].vue`, no layout `jogo`, sem rodapé) pede a fase à API (no
+  servidor), monta o motor no navegador e trata o teclado, as janelas e a conclusão.
+- **O `useJogo`** junta o motor e a animação: o passo dura 300 ms (133 ms com Shift), como no original; durante o
+  passo, a próxima ação espera (uma só, o `utils/turno.ts`); a seta segurada repete no fim de cada passo. Com "menos
+  movimento" ligado no aparelho, a peça pula direto (os testes de tela usam isso).
+- **O teclado** mora no `utils/teclas.ts`: as setas e o WASD pela posição da tecla, as outras ações pela letra, e nada
+  com Ctrl, Cmd ou Alt (o Ctrl+R recarrega o navegador; o recomeço é o R, com confirmação).
+- **O visor** (`components/jogo/Visor.vue`): "ver tudo" no computador; no celular, a câmera segue a joaninha com casas
+  de pelo menos 44 pontos.
+- **O aviso falado** (`utils/mensagens.ts`) diz só o que importa, e a tecla L descreve os arredores.
+
 ## Como mexer
 
 - **Uma regra nova ou corrigida:** leia o ramo no `src/game_logic.cpp` do original (o código está em
@@ -60,6 +79,11 @@
   treino; `~fim_1` é o texto do fim do treino). Depois, o conversor de novo.
 
 ## Armadilhas
+
+- **Os testes de tela** rodam com "menos movimento" (`reducedMotion: 'reduce'`): com a animação ligada, as teclas
+  apertadas mais rápido que o passo se perderiam (só uma espera).
+- **O servidor de desenvolvimento escuta só em `localhost` (IPv6)**: o `pnpm exec playwright test` sozinho cai no
+  build velho (`127.0.0.1`). Rode sempre `pnpm e2e`, que faz o build antes.
 
 - **Os batentes das portas:** no original, cada porta põe dois batentes (que valem como parede) nas casas do lado dela,
   ao carregar e a cada vez que abre ou fecha. Em todas as 120 fases essas casas já são parede, então o motor não

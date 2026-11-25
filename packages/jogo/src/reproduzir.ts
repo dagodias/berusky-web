@@ -3,10 +3,11 @@
  * fase foi mesmo vencida. Uma letra por ação: U, D, L e R são os passos (até os bloqueados, que podem fechar porta),
  * de 1 a 5 a troca de besouro, G guardar a posição e V voltar a ela. O recomeço não entra: ele zera o registro.
  */
+import { MAXIMO_DE_JOGADAS } from '@projeto/shared'
 import { type Direcao, type FaseDoMotor, LETRAS, Partida } from './partida.js'
 
-/** O registro mais comprido que a API aceita (uma fase difícil passa de mil passos; isto é folga de sobra). */
-export const MAXIMO_DE_JOGADAS = 50_000
+/** O registro mais comprido que a API aceita (uma fase difícil passa de mil passos; é folga de sobra). */
+export { MAXIMO_DE_JOGADAS }
 
 export const PADRAO_DAS_JOGADAS = /^[UDLR1-5GV]*$/
 

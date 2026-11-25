@@ -8,6 +8,7 @@
     "build": "tsup",
     "start": "node dist/index.js",
     "openapi": "tsx scripts/openapi.ts",
+    "fases": "tsx scripts/fases.ts",
     "test": "vitest run",
     "typecheck": "tsc -p tsconfig.json"
   },

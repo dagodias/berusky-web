@@ -16,6 +16,7 @@ import {
 } from 'fastify-type-provider-zod'
 import { docsAbertos, env } from './env.js'
 import { exigirGuard } from './lib/guard.js'
+import { fasesRoutes } from './routes/fases.routes.js'
 import { negocioRoutes } from './routes/negocio.routes.js'
 import { saudeRoutes } from './routes/saude.routes.js'
 
@@ -58,6 +59,7 @@ export async function criarServidor(opcoes: Opcoes = {}) {
 
   await app.register(saudeRoutes, { prefix: '/api' })
   await app.register(negocioRoutes, { prefix: '/api' })
+  await app.register(fasesRoutes, { prefix: '/api' })
 
   return app
 }

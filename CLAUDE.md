@@ -10,6 +10,7 @@ com um visual novo. Nasceu do projeto-modelo do padrão Dagoberto; o repositóri
 | O padrão, as pastas, as regras, a segurança e o que se liga depois (o banco, o login, as IAs, os serviços de fora) | docs/arquitetura.md                                                              |
 | As rotas da API                                                                                                    | http://localhost:3333/api/docs (o Swagger) e apps/api/src/routes                 |
 | Os dados do jogo: o nome, a frase e os links (aqui, "o negócio" é o jogo)                                          | apps/api/src/config/negocio.ts                                                   |
+| O jogo: as fases do original, o conversor, o motor e as regras                                                     | docs/jogo.md                                                                     |
 | A cara do site: logo, cores, fonte, menu, peças                                                                    | docs/visual.md (as peças juntas em http://localhost:3000/guia-de-estilo)         |
 | O contrato entre a frente e a API                                                                                  | packages/shared/src/index.ts (os schemas Zod)                                    |
 | O contrato gerado da API (nunca se edita à mão)                                                                    | apps/api/openapi.json e apps/web/app/types/api.d.ts, feitos pelo `pnpm contrato` |

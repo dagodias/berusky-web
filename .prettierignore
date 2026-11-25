@@ -16,3 +16,7 @@ apps/web/app/types/api.d.ts
 
 # o kit do curso (referência local, fora do Git)
 modelo
+
+# os arquivos do Berusky original (byte a byte) e as fases geradas por eles (pnpm --filter @projeto/api fases)
+apps/api/dados/berusky-data-1.7
+apps/api/src/config/fases.json

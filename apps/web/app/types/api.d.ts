@@ -90,6 +90,107 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/fases": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Os cinco grupos de fases, do treino ao impossível, com quantas fases cada um tem */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": {
+                            /** @enum {string} */
+                            id: "treino" | "facil" | "intermediario" | "avancado" | "impossivel";
+                            nome: string;
+                            totalDeFases: number;
+                        }[];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/fases/{grupo}/{numero}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Uma fase: o piso, os itens, os besouros e a dica (a senha só vem quando a anterior é vencida) */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    grupo: "treino" | "facil" | "intermediario" | "avancado" | "impossivel";
+                    numero: number;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": {
+                            /** @enum {string} */
+                            grupo: "treino" | "facil" | "intermediario" | "avancado" | "impossivel";
+                            numero: number;
+                            totalDoGrupo: number;
+                            fundo: number;
+                            piso: string;
+                            itens: number[][];
+                            besouros: number[][];
+                            dica: string | null;
+                        };
+                    };
+                };
+                /** @description Default Response */
+                404: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": {
+                            erro: string;
+                        };
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {

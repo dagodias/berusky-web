@@ -1,4 +1,4 @@
-import { NegocioSchema } from '@projeto/shared'
+import { FaseSchema, GrupoSchema, NegocioSchema } from '@projeto/shared'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { docsAbertos } from '../src/env.js'
 import { criarServidor } from '../src/server.js'
@@ -25,6 +25,34 @@ describe('a API', () => {
     const resposta = await app.inject({ method: 'GET', url: '/api/negocio' })
     expect(resposta.statusCode).toBe(200)
     expect(NegocioSchema.safeParse(resposta.json()).success).toBe(true)
+  })
+
+  it('lista os grupos e entrega uma fase no formato do contrato', async () => {
+    const grupos = await app.inject({ method: 'GET', url: '/api/fases' })
+    expect(grupos.statusCode).toBe(200)
+    expect(GrupoSchema.array().safeParse(grupos.json()).success).toBe(true)
+
+    const fase = await app.inject({ method: 'GET', url: '/api/fases/treino/1' })
+    expect(fase.statusCode).toBe(200)
+    expect(FaseSchema.safeParse(fase.json()).success).toBe(true)
+    expect(fase.json()).not.toHaveProperty('senha')
+  })
+
+  it('a fase que não existe responde 404, e o grupo inventado, 400', async () => {
+    const naoExiste = await app.inject({ method: 'GET', url: '/api/fases/treino/11' })
+    expect(naoExiste.statusCode).toBe(404)
+    expect(naoExiste.json()).toEqual({ erro: 'fase_nao_encontrada' })
+    expect((await app.inject({ method: 'GET', url: '/api/fases/outro/1' })).statusCode).toBe(400)
+  })
+
+  it('as fases têm um limite próprio, maior que o geral (cada página pede a sua)', async () => {
+    const pedir = () =>
+      app.inject({
+        method: 'GET',
+        url: '/api/fases',
+        headers: { 'x-forwarded-for': '203.0.113.50' },
+      })
+    for (let i = 0; i < 150; i++) expect((await pedir()).statusCode).toBe(200)
   })
 
   it('limita as chamadas por visitante, sem cair no IP inventado', async () => {

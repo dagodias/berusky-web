@@ -105,6 +105,202 @@
           }
         }
       }
+    },
+    "/api/fases": {
+      "get": {
+        "summary": "Os cinco grupos de fases, do treino ao impossível, com quantas fases cada um tem",
+        "tags": [
+          "fases"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "enum": [
+                          "treino",
+                          "facil",
+                          "intermediario",
+                          "avancado",
+                          "impossivel"
+                        ]
+                      },
+                      "nome": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "totalDeFases": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "exclusiveMinimum": true,
+                        "maximum": 9007199254740991
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "nome",
+                      "totalDeFases"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/fases/{grupo}/{numero}": {
+      "get": {
+        "summary": "Uma fase: o piso, os itens, os besouros e a dica (a senha só vem quando a anterior é vencida)",
+        "tags": [
+          "fases"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "treino",
+                "facil",
+                "intermediario",
+                "avancado",
+                "impossivel"
+              ]
+            },
+            "in": "path",
+            "name": "grupo",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 99
+            },
+            "in": "path",
+            "name": "numero",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "grupo": {
+                      "type": "string",
+                      "enum": [
+                        "treino",
+                        "facil",
+                        "intermediario",
+                        "avancado",
+                        "impossivel"
+                      ]
+                    },
+                    "numero": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "exclusiveMinimum": true,
+                      "maximum": 9007199254740991
+                    },
+                    "totalDoGrupo": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "exclusiveMinimum": true,
+                      "maximum": 9007199254740991
+                    },
+                    "fundo": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    },
+                    "piso": {
+                      "type": "string",
+                      "minLength": 672,
+                      "maxLength": 672,
+                      "pattern": "^[.0-9]+$"
+                    },
+                    "itens": {
+                      "type": "array",
+                      "items": {
+                        "minItems": 4,
+                        "maxItems": 4,
+                        "type": "array",
+                        "items": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 9007199254740991
+                        }
+                      }
+                    },
+                    "besouros": {
+                      "minItems": 1,
+                      "maxItems": 5,
+                      "type": "array",
+                      "items": {
+                        "minItems": 4,
+                        "maxItems": 4,
+                        "type": "array",
+                        "items": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 9007199254740991
+                        }
+                      }
+                    },
+                    "dica": {
+                      "nullable": true,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "grupo",
+                    "numero",
+                    "totalDoGrupo",
+                    "fundo",
+                    "piso",
+                    "itens",
+                    "besouros",
+                    "dica"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "erro": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "erro"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

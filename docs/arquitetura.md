@@ -46,7 +46,9 @@ apps/web/public/             a logo, os ícones e a imagem da prévia do link
 apps/api/src/routes/         um arquivo de rotas por assunto
 apps/api/src/services/       as regras do negócio
 apps/api/src/lib/guard.ts    quem pode chamar cada rota
-apps/api/src/config/         os dados do negócio, até o banco entrar
+apps/api/src/config/         os dados do jogo (negocio.ts) e as 120 fases (fases.json, gerado pelo conversor)
+apps/api/dados/              os arquivos do Berusky original, byte a byte (GPL): só o conversor lê
+apps/api/scripts/fases.ts    o conversor: os arquivos originais viram o fases.json
 apps/api/src/env.ts          as configurações, conferidas na subida
 apps/api/scripts/openapi.ts  grava a especificação da API em apps/api/openapi.json
 packages/shared/src/         o contrato

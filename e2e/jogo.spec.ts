@@ -44,7 +44,10 @@ test('vence o treino 1, recebe a senha da fase 2, e a fase 2 fica aberta', async
   const fim = page.getByRole('dialog', { name: 'Fase vencida!' })
   await expect(fim).toBeVisible()
   await expect(fim.locator('[data-senha]')).toHaveText('iroja')
-  await fim.getByRole('link', { name: 'Próxima fase' }).click()
+  // O foco vai para a ação principal: Enter já leva à próxima fase.
+  const proxima = fim.getByRole('link', { name: 'Próxima fase' })
+  await expect(proxima).toBeFocused()
+  await proxima.click()
   await expect(page).toHaveURL(/\/fases\/treino\/2$/)
   await expect(page.locator('[data-pronto]')).toBeVisible()
 

@@ -7,61 +7,48 @@ O jogo original, as fases e as regras são © 1997–2020 AnakreoN, sob a GPL. E
 GPL-2.0-or-later (o arquivo `LICENSE`). Ela nasceu do projeto-modelo do Curso de Full Stack com IA (Ensino Social): a
 frente e a API separadas, TypeScript nos dois lados e tudo documentado desde o primeiro dia.
 
-## O que já vem pronto
+## O que tem aqui
 
-| Parte                    | O que é                                                                                                                                   |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `apps/web`               | A frente: Nuxt 4, Tailwind e os ícones Lucide. A página sai pronta do servidor (bom para o Google e para a prévia do link compartilhado)  |
-| A cara do site           | Um site clean pronto para crescer: topo com logo e menu, rodapé, claro e escuro, as páginas de base e as peças da tela (`docs/visual.md`) |
-| `apps/api`               | A API: Fastify com Zod e a documentação automática em `/api/docs`                                                                         |
-| `packages/shared`        | O contrato: o formato dos dados, usado pelos dois lados                                                                                   |
-| O contrato               | A frente só chama caminho e campo que a API tem: os tipos dela são gerados da API (`pnpm contrato`)                                       |
-| O portão                 | Antes de cada commit e de cada envio, e a cada push no GitHub: segredos esquecidos, lint, tipos, contrato, testes, build e testes de tela |
-| `.claude/` e `.mcp.json` | As regras da IA (o que ela não pode fazer), os comandos do projeto e a documentação oficial do Nuxt, ligada                               |
-| `CLAUDE.md` e `docs/`    | A memória: o mapa do projeto e o estado de cada assunto                                                                                   |
-| `infra/`                 | A conexão com o servidor: prepará-lo e publicar com um comando                                                                            |
+| Parte             | O que é                                                                                                      |
+| ----------------- | ------------------------------------------------------------------------------------------------------------ |
+| `packages/jogo`   | O motor: as regras do Berusky 1.7.2, portadas do `game_logic.cpp` original, sem tela, com um teste por regra |
+| `apps/api`        | A API (Fastify e Zod): serve as fases, confere a vitória refazendo as jogadas com o motor e dá a senha       |
+| `apps/api/dados`  | Os arquivos do jogo original (as 120 fases, as senhas e os textos), byte a byte, sob a GPL                   |
+| `apps/web`        | O site (Nuxt 4 e Tailwind): o mapa de fases, a partida com o visual novo em SVG, o celular e o teclado       |
+| `packages/shared` | O contrato entre o site e a API (os schemas Zod)                                                             |
+| `docs/`           | A documentação: as regras e as armadilhas do motor (`docs/jogo.md`), a arquitetura e o visual                |
+| `e2e/`            | Os testes de tela, num navegador de verdade (até uma vitória no treino 1, pelo teclado)                      |
 
-## Começar
+## Rodar no computador
 
-1. Crie o seu projeto a partir deste modelo, no botão **Use this template** do GitHub, ou pelo Terminal:
+Precisa de Git, Node.js 24.15 ou mais novo e pnpm.
 
-   ```
-   gh repo create meu-projeto --template dagodias/projeto-modelo --private --clone
-   ```
+```
+pnpm install
+pnpm dev
+```
 
-2. Na pasta do projeto: `pnpm install`. Para os testes de tela, baixe o navegador: `pnpm exec playwright install chromium`.
-3. `pnpm dev`: a frente em http://localhost:3000 e a API em http://localhost:3333 (a documentação em `/api/docs`).
-
-Precisa de: Git, Node.js 24.15 ou mais novo (a versão LTS) e pnpm.
-
-## Deixe com a sua cara
-
-| O que trocar                                                                           | Onde                                                                                           |
-| -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| O nome, a frase, o telefone, o e-mail, o endereço, os horários, os produtos e as redes | `apps/api/src/config/negocio.ts` (o `temWhatsapp` diz se o telefone também atende no WhatsApp) |
-| A logo ("Sua logo")                                                                    | `apps/web/public/logo.svg`: troque o arquivo, com o mesmo nome                                 |
-| A cor da marca, a fonte e o arredondado                                                | `apps/web/app/assets/css/main.css` (a cor: troque a palavra `emerald`)                         |
-| O menu e o endereço do site                                                            | `apps/web/app/app.config.ts`                                                                   |
-| O ícone da aba, o do celular e a imagem da prévia do link                              | `apps/web/public/`: `icone.svg`, `favicon.ico`, `apple-touch-icon.png`, `previa.png`           |
-| As seções de exemplo                                                                   | as marcadas com o selo "Exemplo", em `apps/web/app/pages`                                      |
-
-Todas as peças da tela aparecem juntas em http://localhost:3000/guia-de-estilo (fora do menu e do Google). Quer o
-estilo de um modelo pronto? Coloque o modelo em `docs/estilo/` e peça com o `/trocar-estilo`.
+O site abre em http://localhost:3000 e a API em http://localhost:3333 (a documentação dela em `/api/docs`). Para os
+testes de tela, baixe o navegador uma vez: `pnpm exec playwright install chromium`.
 
 ## Os comandos
 
-| Comando                                        | O que faz                                                |
-| ---------------------------------------------- | -------------------------------------------------------- |
-| `pnpm dev`                                     | Liga a frente e a API                                    |
-| `pnpm test`                                    | Roda os testes                                           |
-| `pnpm e2e`                                     | Os testes de tela, num navegador de verdade              |
-| `pnpm contrato`                                | Gera de novo o contrato, depois de mudar uma rota da API |
-| `pnpm lint`, `pnpm typecheck`, `pnpm segredos` | O portão, um por um                                      |
-| `pnpm build`                                   | O build de produção                                      |
-| `pnpm publicar`                                | Publica no servidor (`docs/publicar.md`)                 |
+| Comando                                        | O que faz                                                          |
+| ---------------------------------------------- | ------------------------------------------------------------------ |
+| `pnpm dev`                                     | Liga o site e a API                                                |
+| `pnpm test`                                    | Os testes (o motor, a API, o site e as fases convertidas)          |
+| `pnpm e2e`                                     | O build e os testes de tela, no tamanho do celular e do computador |
+| `pnpm contrato`                                | Gera de novo o contrato, depois de mudar uma rota da API           |
+| `pnpm lint`, `pnpm typecheck`, `pnpm segredos` | O portão, um por um                                                |
+| `pnpm --filter @projeto/api fases`             | Converte de novo as fases do original (`apps/api/dados`)           |
+| `pnpm --filter @projeto/api resolver`          | Procura soluções das fases de treino com o motor                   |
 
-## Com a IA
+## Licença e créditos
 
-Abra a pasta no Claude Code: ela lê o `CLAUDE.md` sozinha. Na primeira conversa, ela pergunta se pode usar o servidor
-do Nuxt (do `.mcp.json`): é a documentação oficial do Nuxt, só de leitura. Os comandos do projeto:
-`/nova-funcionalidade`, `/imposto`, `/revisar`, `/ligar-banco`, `/ligar-login`, `/publicar` e `/trocar-estilo`.
+Este projeto é software livre: GNU GPL, versão 2 ou mais nova (o arquivo `LICENSE`). O Berusky original é da AnakreoN
+(1997–2020), também sob a GPL: programação de Martin Stránský, regras e fases de Luboš Doležal, gráficos de Jan
+Halfar e Václav Hlobil, som de Martin Linda e tradução de Radek Biba (a lista completa está na página Sobre do site).
+Os desenhos desta versão são novos; as fases, as regras, as senhas e os textos (traduzidos) vêm do original.
+
+O projeto nasceu do projeto-modelo do Curso de Full Stack com IA (Ensino Social); as regras de trabalho estão no
+`CLAUDE.md` e em `docs/arquitetura.md`.

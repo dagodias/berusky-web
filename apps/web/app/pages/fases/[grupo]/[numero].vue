@@ -151,6 +151,8 @@ watch(venceu, async (agora) => {
     })
     if (data) {
       Object.assign(fim, { estado: 'pronto', conclusao: data })
+      // O foco vai para a ação principal ("Próxima fase"), que só aparece agora.
+      nextTick(() => document.querySelector<HTMLElement>('[data-proxima-fase]')?.focus())
       salvar(
         registrarVitoria(
           progresso.value,
@@ -273,7 +275,11 @@ const rotuloDoTabuleiro = `O tabuleiro da fase ${numero} do grupo ${nomeDoGrupo}
       <template #acoes>
         <BaseBotao para="/fases" variante="discreto">Mapa de fases</BaseBotao>
         <BaseBotao variante="secundario" @click="jogarDeNovo">Jogar de novo</BaseBotao>
-        <BaseBotao v-if="temProxima && fim.estado !== 'conferindo'" :para="proximaFase">
+        <BaseBotao
+          v-if="temProxima && fim.estado !== 'conferindo'"
+          :para="proximaFase"
+          data-proxima-fase
+        >
           Próxima fase
         </BaseBotao>
       </template>

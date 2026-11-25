@@ -3,9 +3,11 @@ import tailwindcss from '@tailwindcss/vite'
 
 /**
  * O commit do código que vai no build: a página Sobre mostra e leva até ele (a GPL pede que quem joga chegue ao
- * código exato do que está no ar). Sem o Git, fica vazio.
+ * código exato do que está no ar). No servidor, a pasta da versão não tem o .git, e o atualizar.sh passa o commit
+ * pela variável COMMIT_DO_CODIGO; no computador, ele vem do Git. Sem os dois, fica vazio.
  */
 function commitDoCodigo(): string {
+  if (process.env.COMMIT_DO_CODIGO) return process.env.COMMIT_DO_CODIGO
   try {
     return execSync('git rev-parse HEAD', { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim()
   } catch {

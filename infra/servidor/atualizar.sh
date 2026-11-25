@@ -67,6 +67,8 @@ else
 fi
 
 passo "O build da versão nova (o site continua no ar com a de antes)"
+# A pasta da versão sai de um git archive, sem o .git: o commit vai para o build pela variável COMMIT_DO_CODIGO
+# (a página Sobre mostra e leva até ele, como a GPL pede).
 NOVA="$VERSOES/$(date +%Y%m%d-%H%M%S)-$CURTO"
 if ! comoProjeto '
   set -euo pipefail
@@ -75,8 +77,8 @@ if ! comoProjeto '
   ln -s "$2/apps/api/.env" "$1/apps/api/.env"
   cd "$1"
   pnpm install --frozen-lockfile
-  pnpm build
-' "$NOVA" "$APP"; then
+  COMMIT_DO_CODIGO="$3" pnpm build
+' "$NOVA" "$APP" "$COMMIT"; then
   comoProjeto 'rm -rf "$1"' "$NOVA"
   echo
   echo "O build falhou: o site continua no ar com a versão de antes. O erro está acima."

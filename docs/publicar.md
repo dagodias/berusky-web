@@ -2,8 +2,12 @@
 
 ## 0. Estado
 
-- O servidor ainda não foi preparado. O PUBLICACAO-DAGOBERTO.md prepara, e troca esta linha pelo estado de verdade
-  (o provedor, a região, o domínio e a data).
+- No ar desde 26/11/2026, na Amazon Lightsail em São Paulo (a conta pessoal do Dagoberto): a máquina `berusky-web`
+  (Ubuntu 24.04 LTS, 1 GB, US$ 7/mês), com o IP fixo `berusky-web-ip` e as portas 22, 80 e 443 abertas no painel. No
+  computador, o apelido do SSH é `berusky-web`, e a AWS CLI entra na conta pelo `aws login`.
+- O endereço é o grátis do sslip.io (o IP com hífens, mais `.sslip.io`), com o cadeado. Ele leva o IP no nome: por
+  isso o `infra/servidor.conf` fica fora do Git (no `.git/info/exclude` do computador) e o `enderecoDoSite` segue
+  vazio. O domínio de verdade é a P-012.
 
 ## Como o servidor fica
 
@@ -49,6 +53,16 @@ publicar` mostrou e publique de novo.
   aquele), `git push` e `pnpm publicar`.
 
 Voltar o código não desfaz mudança no banco: mudança de banco que apaga coisa precisa de um plano antes.
+
+## Apagar o servidor
+
+Apagar a máquina não solta o IP fixo, e o IP fixo solto cobra por hora. Para apagar os dois (o que está na máquina
+some junto):
+
+```
+aws lightsail delete-instance --region sa-east-1 --instance-name berusky-web
+aws lightsail release-static-ip --region sa-east-1 --static-ip-name berusky-web-ip
+```
 
 ## Os scripts (pasta infra)
 

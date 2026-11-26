@@ -1,6 +1,6 @@
 # Pendências
 
-Próximo passo: P-011 (jogar num celular de verdade), depois P-010 (publicar).
+Próximo passo: P-011 (jogar num celular de verdade, agora pelo endereço do site no ar).
 
 ## P-001 · Sons e música
 
@@ -88,6 +88,8 @@ Próximo passo: P-011 (jogar num celular de verdade), depois P-010 (publicar).
   `app.config.ts`, para a prévia do link).
 - **Quem destrava:** Dagoberto (o servidor e o domínio), com a IA.
 - **Como resolver:** o `PUBLICACAO-DAGOBERTO.md`, que está na pasta `modelo/` (fora do Git).
+- **Resolvida em 26/11/2026:** no ar na Amazon Lightsail, em São Paulo, com o endereço grátis do sslip.io e o cadeado
+  (o `docs/publicar.md`). O domínio e o `enderecoDoSite` ficaram para a P-012.
 
 ## P-011 · Jogar num celular de verdade
 
@@ -97,3 +99,23 @@ Próximo passo: P-011 (jogar num celular de verdade), depois P-010 (publicar).
   verdade (o toque no direcional, o deslizar e a câmera).
 - **Quem destrava:** Dagoberto.
 - **Como resolver:** com o `pnpm dev` ligado, abrir o site no celular pela rede de casa, ou depois de publicar.
+
+## P-012 · O domínio de verdade
+
+- **Assunto:** docs/publicar.md
+- **Data:** 26/11/2026
+- **O que falta:** o site está no endereço grátis do sslip.io, que leva o IP no nome. Sem domínio, o `enderecoDoSite`
+  fica vazio (sem a prévia do link) e o `infra/servidor.conf` fica fora do Git.
+- **Quem destrava:** Dagoberto decide: um domínio (ou um subdomínio de um que já tem), ou apagar o servidor depois da
+  apresentação (o `docs/publicar.md` diz como).
+- **Como resolver:** as etapas 5 a 8 do `PUBLICACAO-DAGOBERTO.md`: o DNS apontando para o IP fixo, o `preparar.sh` e
+  o `cadeado.sh` com o domínio, o `infra/servidor.conf` de volta ao Git e o `enderecoDoSite` preenchido.
+
+## P-013 · O vigia de queda e as cópias da máquina
+
+- **Assunto:** docs/publicar.md
+- **Data:** 26/11/2026
+- **O que falta:** ninguém avisa se o site cair, e a máquina não tem cópia automática (snapshot).
+- **Quem destrava:** Dagoberto (cria o vigia e decide os snapshots, que têm um custo pequeno).
+- **Como resolver:** um vigia grátis de fora (UptimeRobot ou parecido) olhando o `/api/saude` a cada 5 minutos; os
+  snapshots automáticos no painel do Lightsail.
